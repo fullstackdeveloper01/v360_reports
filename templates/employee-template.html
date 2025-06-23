@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Health Report</title>
+    <link rel="stylesheet" href="/pdf/KBGoogleyEyes.ttf">
+
+    <style>
+        /* KBGoogleyEyes font */
+        @font-face {
+            font-family: 'KBGoogleyEyes';
+            src: url('/pdf/KBGoogleyEyes.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Montserrat fonts */
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('/pdf/Montserrat-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('/pdf/Montserrat-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('/pdf/Montserrat-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+
+        body {
+
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        .page {
+            padding: 0;
+            margin: 0;
+            max-width: 880px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .banner-image {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .banner-image img {
+            width: 100%;
+            height: auto;
+        }
+
+
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 6px;
+        }
+
+
+
+        .page1-footer {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            padding-top: 40px;
+        }
+
+        .page1-footer-left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 60%;
+            gap: 20px;
+        }
+
+        .page1-footer-right {
+            width: 25%;
+        }
+
+        .page1-footer img {
+            height: auto;
+        }
+
+        .Page1FtrTopLeftImage {
+            width: 5%;
+            position: absolute;
+            top: 2%;
+            left: 12%;
+        }
+
+        .Page1FtrCenterImage {
+            width: 56%;
+            position: absolute;
+            top: 22%;
+            left:33%;
+        }
+
+        .Page1FtrCenterImage1{
+            width: 46%;
+            position: absolute;
+            top: 272px;
+            left:288px;
+            border-radius: 100%;
+        }
+
+        .kb-font {
+            font-family: 'KBGoogleyEyes', sans-serif;
+            font-weight: 700;
+            /* font-size: 65px; */
+        }
+
+        .kb-font-sm {
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #000;
+            width: 180px;
+        }
+
+        .colon{
+           font-family: 'Montserrat-Regular', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #000; 
+        }
+
+        .employee-details{
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        width: 400px;
+    }
+
+            .main-banner-image img{
+            width: 100%;
+            height: 1151px;
+        }
+
+            .text {
+            font-size: 14px;
+            padding-bottom: 8px;
+            margin-left: 10px;
+            font-weight: 300;
+            color: #000;
+            /* text-transform: uppercase; */
+            width: 63%;
+            font-family: 'Montserrat-Regular', sans-serif;
+        }
+
+    
+        /* BMI Styles */
+        .bmi-stats-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 75%;
+            margin: 0 auto 20px;
+        }
+
+        .bmi-stat {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .bmi-stats-img {
+            width: 85px;
+            height: 85px;
+        }
+
+        .bmi-stats-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            text-align: center;
+        }
+
+
+        .bmi-label {
+             font-size: 16px;
+            width: 100%;
+            text-align: center;
+            margin-top: 3px;
+            font-style: normal;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .biometric-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 78%;
+            margin: 0 auto 10px;
+        }
+
+        .biometric-value {
+            padding: 4px 10px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            margin: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 40%;
+        }
+
+        .biometric-value-1 {
+            background-color: #FFF852;
+        }
+
+        .biometric-value-2 {
+            background-color: #1EB581;
+        }
+
+        .biometric-value-3 {
+            background-color: #DE6342;
+        }
+
+        .biometric-value-4 {
+            background-color: #DD3442;
+        }
+
+        .biometric-label {
+            font-size: 18px;
+        }
+
+        .biometric-input {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto 5px;
+        }
+
+        .footer-img {
+            width: 100%;
+            margin: 0 20px;
+        }
+
+        .footer-img img {
+            width: 95%;
+        }
+        .footer-img-bottom img{
+            width: 100%;
+        }
+
+        /* .flex-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 6px;
+        } */
+
+        .flex-container-page5 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            padding-bottom: 6px;
+            margin: 0 auto;
+            width: 100%;
+            gap: 0;
+        }
+
+        .section-divider {
+            border-bottom: 1px solid #DDDDDD;
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 3px;
+            text-align: center;
+            display: flex;
+            gap: 150px;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-family: 'KBGoogleyEyes', sans-serif;
+            font-weight: 500;
+            font-size: 30px;
+        }
+
+        .page3secondSectionInnerWr {
+            padding: 10px 20px;
+            width: 50%;
+        }
+
+        .border-right {
+            border-right: 2px solid #DDDDDD;
+        }
+
+        .border-left {
+            border-left: 2px solid #DDDDDD;
+        }
+
+        .w50 {
+            width: 50%;
+        }
+
+        .w45 {
+            width: 45%;
+        }
+
+        .w40 {
+            width: 40%;
+        }
+
+        .w70 {
+            width: 70%;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .small-text {
+            font-size: 11px;
+            text-align: center;
+            line-height: 10px;
+            margin-top: 3px;
+        }
+
+        /* .header-text {
+            font-size: 12px;
+            text-align: center;
+            line-height: 10px;
+            font-weight: bold;
+            color: #1b4059;
+        } */
+
+        .footer-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
+            border-top: 1px solid #CCCCCC;
+            padding-top: 20px;
+        }
+
+        .footer-inner {
+            height: 200px;
+            width: 170px;
+            position: relative;
+        }
+
+        .footer-text {
+            font-size: 10px;
+            border-bottom: 1px dotted #333;
+            position: absolute;
+        }
+
+        .image-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: flex-end;
+            width: 100%;
+            gap: 55px;
+        }
+
+        .image-small {
+            width: 70px;
+        }
+
+        .image-medium {
+            width: 100px;
+        }
+
+        /* 
+        .content-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        } */
+
+        .second-section-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .flex-container-page4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .flex-container-cardio-inner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: 0 auto;
+            gap: 5px;
+        }
+
+        .w20 {
+            width: 20%;
+        }
+
+        .w33 {
+            width: 33%;
+        }
+
+        .w35 {
+            width: 35%;
+        }
+
+        .w65 {
+            width: 65%;
+        }
+
+        .w80 {
+            width: 80%;
+        }
+
+        .w90 {
+            width: 90%;
+        }
+
+        .bmi-input {
+            border: 1px solid #000;
+            border-radius: 100px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            padding: 12px 0px 0px 0px !important;
+            text-align: center;
+            box-shadow: 8px 5px 20px 0px #d5d5d5;
+            width: 160px;
+            height: 30px;
+        }
+
+        .content-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .w30 {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .w65 {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+
+        .second-section-row {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            align-items: center;
+            /* margin-bottom: 10px; */
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .item img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .label {
+            font-size: 14px;
+            /* text-align: left; */
+            text-align: center;
+            line-height: 14px;
+            font-weight: bold;
+            color: #1b4059;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .body-input {
+            font-size: 14px;
+            color: #000000;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            border: 1px solid #000000;
+            border-radius: 30px;
+            padding: 9px 10px;
+            box-shadow: 8px 5px 20px 0px #d5d5d5;
+            /* background-color: #f8f8f8; */
+        }
+
+        .body-input-second {
+            font-size: 14px;
+            color: #000000;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            border: 1px solid #000000;
+            border-radius: 30px;
+            padding: 6px 10px;
+            box-shadow: 8px 5px 20px 0px #d5d5d5;
+        }
+
+        /* 
+        .bmi-label {
+            font-size: 13px;
+            text-align: center;
+            margin-top: 3px;
+        } */
+
+        .visionary-result-wr {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0px auto 20px;
+        }
+
+        .heading-text {
+            font-family: 'KBGoogleyEyes', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            /* padding-top: 15px; */
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .visionary-result-inside-wr {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: space-around;
+            flex-direction: column;
+            width: 45%;
+        }
+
+        .cardiovascular-squre {
+            border: 1px solid #000;
+            border-radius: 0;
+            font-size: 14px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .footer-text {
+            width: 95%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .footer-text-content {
+            /* display: flex;
+              align-items: center; */
+            width: 95%;
+            gap: 3px;
+            margin: 0 auto;
+
+            /* flexDirection: column,
+              justifyContent: "center",
+              gap: "3px",
+              width: "95%",
+              margin: "0 auto", */
+        }
+
+        .vision-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        .cardiovascular-square {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 7px 10px;
+            height: 20px;
+            border: 2px solid #000;
+            width: 90%;
+        }
+
+
+        .kb-font {
+            font-family: 'KBGoogleyEyes', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .normal-text {
+            color: #1eb581;
+            font-size: 12px;
+            margin-top: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .abnormal-text {
+            color: #df2027;
+            font-size: 12px;
+            margin-top: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .eye-condition-text {
+            font-size: 18px;
+            line-height: 12px;
+            /* font-family: 'KBGoogleyEyes', sans-serif; */
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-weight: 600;
+            width: 350px;
+        }
+
+        .eye-description-text {
+            font-size: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            line-height: 12px;
+            margin-top: 4px;
+            letter-spacing: 0.2px;
+        }
+/* 
+        .blue-text {
+            color: #2f2f82;
+        }
+
+        .green-text {
+            color: #20b681;
+        } */
+
+        .height10 {
+            /* height: 10px; */
+            clear: both;
+        }
+
+        .label-span {
+            font-size: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .pbf-item {
+            display: inline;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            line-height: 10px;
+            list-style: 4px;
+            gap: 10px;
+        }
+
+        .page3ftrwr {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
+            border-top: 1px solid #cccccc;
+            padding-top: 20px;
+        }
+
+        .page3ftrInrCont {
+            width: 250px;
+            position: relative;
+        }
+
+        .page3ftrInrCont img {
+            width: 250px;
+            object-fit: contain;
+        }
+
+        .text-box {
+            position: absolute;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .text-box p {
+            margin: 0;
+            border-bottom: 1px solid #333;
+            width: 50px;
+            padding: 1px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .text-box p:last-child {
+            border-bottom: none;
+        }
+
+        /* Positioning */
+        .top-left {
+            top: 43px;
+            left: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .top-right {
+            top: 43px;
+            right: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .bottom-left {
+            bottom: 18px;
+            left: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .bottom-right {
+            bottom: 18px;
+            right: 10px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .center-box {
+            top: 140px;
+            left: 100px;
+            width: 50px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .flex-container-second {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 6px;
+        }
+
+
+        .teeth-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .tooth {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4px;
+            font-weight: bold;
+        }
+
+        .caries {
+            background-color: #D92626;
+            /* red for caries */
+            color: #fff;
+        }
+
+        .divider {
+            border-left: 1px solid #000;
+            height: 40px;
+            margin: 0 5px 0;
+        }
+
+        /* .label {
+      font-size: 12px;
+      
+      margin-bottom: 5px;
+    } */
+
+    
+    </style>
+</head>
+
+<body>
+    <!-- Page 1 Start -->
+    <div class="page">
+        <div class="main-banner-image">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/banner-image3.png" alt="Header banner">
+        </div>
+
+        <!-- Student information form -->
+         <div class="employee-details">
+            <div style="font-size: 28px; color: #0F5B50; font-weight: bold;font-family: 'Montserrat', sans-serif; margin-left: 10px; margin-bottom: 20px;">This is Your Report</div>
+        <div class="flex-container">
+            <span class="kb-font-sm">Name</span>
+            <span class="colon">:</span>
+            <span class="text">Rahul Jain</span>
+        </div>
+
+        <div class="flex-container">
+            <span class="kb-font-sm">Age</span>
+            <span class="colon">:</span>
+            <span class="text">50 Years</span>
+        </div>
+
+        <div class="flex-container">
+            <span class="kb-font-sm">Gender</span>
+            <span class="colon">:</span>
+            <span class="text">Male</span>
+        </div>
+
+        <div class="flex-container">
+            <span class="kb-font-sm">Date of Birth</span>
+            <span class="colon">:</span>
+            <span class="text">03-03-1975</span>
+        </div>
+
+        <div class="flex-container">
+            <span class="kb-font-sm">Department</span>
+           <span class="colon">:</span>
+            <span class="text">Pune/</span>
+        </div>
+
+        <div class="flex-container">
+            <span class="kb-font-sm">Employee Id</span>
+            <span class="colon">:</span>
+            <span class="text">STYTYT-006</span>
+        </div>
+
+        <div class="flex-container">
+            <span class="kb-font-sm">Screening Date</span>
+            <span class="colon">:</span>
+            <span class="text">14-05-2024</span>
+        </div>
+        </div>
+
+                <div class="page1-footer" style="margin: 0; padding: 0;">
+            <div class="page1-footer-left" >
+                <img class="Page1FtrTopLeftImage"
+                    src="https://app.vigour360.com/assets/uploads/school/thumbnail/ea50748dd41.png" alt="Vigour logo"
+                    style="width: 100px;">
+                <img class="Page1FtrCenterImage"
+                    src="https://app.vigour360.com/assets/admin/pdf-images/white-circle-book.png" alt="Center logo">
+                <img class="Page1FtrCenterImage1"
+                    src="https://app.vigour360.com/assets/uploads/school/thumbnail/ea50748dd4.png" alt="Center logo">
+
+            </div>
+
+        </div>
+
+        
+    </div>
+    <!-- Page 1 End -->
+
+    <!-- Page 2 Start -->
+    <div class="page">
+        <div class="banner-image">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/BiometricScreeining1.png"
+                alt="Header banner">
+        </div>
+
+        <!-- BMI stats -->
+        <div class="bmi-stats-container">
+            <div class="bmi-stat">
+                <img class="bmi-stats-img" src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img1.svg"
+                    alt="Weight icon">
+                <div class="bmi-stats-inner" style="margin-left: 15px;">
+                    <div class="bmi-input">52.3</div>
+                    <div class="bmi-label">WEIGHT/ KGS</div>
+                </div>
+            </div>
+            <div class="bmi-stat">
+                <img class="bmi-stats-img" src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img2.svg"
+                    alt="Height icon" style="width: 130px; float: left;">
+                <div class="bmi-stats-inner">
+                    <div class="bmi-input">157</div>
+                    <div class="bmi-label">HEIGHT/CMS</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bmi-stats-container">
+            <div class="bmi-stat">
+                <img class="bmi-stats-img" src="/bio-img3.svg" alt="BMI icon">
+                <div class="bmi-stats-inner" style="margin-left: 15px;">
+                    <div class="bmi-input">21.22</div>
+                    <div class="bmi-label">BMI</div>
+                </div>
+            </div>
+            <div class="bmi-stat">
+                <div style="width: 100%; text-align: center;">
+                    <div class="bmi-input" style="background-color: #1eb581; width: 300px;">NORMAL</div>
+                    <div class="bmi-label">BMI STATUS</div>
+                </div>
+            </div>
+        </div>
+
+                <div class="footer-text-content" style="margin-top: 35px;">
+            <div style="margin-top: 8px; font-size: 15px; text-align:center; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+             **Your BMI is 21.22, indicating your weight is in the Normal category for adults of your height. BMI is a screening measure and is not intended to diagnose disease or illness. Maintaining a weight in the healthy BMI range is one way to support overall health as you age.
+            </div>
+        </div>
+
+        <!-- BMI ranges -->
+        <div class="biometric-container" style="margin-top: 40px;">
+            <div class="biometric-value biometric-value-1">
+                <div class="biometric-input" style="font-size: 16px;"><img src="arrow-down.png" style="width: 12px;"
+                        alt=""> - 18.5</div>
+                <div class="biometric-label" style="font-size: 14px;">BMI</div>
+            </div>
+            <div class="biometric-value biometric-value-2">
+                <div class="biometric-input" style="font-size: 16px;">18.51 - 24.9</div>
+                <div class="biometric-label" style="font-size: 14px;">BMI</div>
+            </div>
+            <div class="biometric-value biometric-value-3">
+                <div class="biometric-input" style="font-size: 16px;">24.91 - 29.9</div>
+                <div class="biometric-label" style="font-size: 14px;">BMI</div>
+            </div>
+            <div class="biometric-value biometric-value-4">
+                <div class="biometric-input" style="font-size: 16px;">29.91 - <img src="upload.png" style="width: 12px;"
+                        alt=""></div>
+                <div class="biometric-label" style="font-size: 14px;">BMI</div>
+            </div>
+        </div>
+
+              <div class="footer-img" style="margin-top: 70px; margin-bottom: 55px;">
+            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/overweight.png" alt="BMI chart">
+        </div>
+
+
+
+        <div class="footer-img-bottom" style="margin-top: 62px;">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/footer-image.png" alt="BMI chart">
+        </div>
+    </div>
+    <!-- Page 2 End -->
+
+    <!-- Page 3 start -->
+    <div class="page">
+        <div class="banner-image">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/BodyCompositionAnalysis1.png" alt="Body Background">
+        </div>
+
+        <!-- First Section -->
+        <div class="flex-container-page5" style="align-items: center; border-bottom: 1px solid #DDDDDD;">
+            <!-- Left Container -->
+            <div class="page3secondSectionInnerWr border-right" style="width: 70%;">
+                <div class="image-row" style="margin-bottom: 10px;">
+                    <img class="image-small"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_01.png"
+                        alt="Decoration" style="width: 90px; height: 28px; ">
+                    <img class="image-medium"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_02.png"
+                        alt="Decoration" style="width: 124px; height: 28px; margin-right: 15px;">
+                </div>
+
+                <div class="content-row">
+                    <!-- Labels and Icons -->
+                    <div class="w30">
+                        <div class="item">
+                            <img src="water-drop.svg"
+                                alt="Total Body Water">
+                            <div class="label">TOTAL BODY WATER</div>
+                        </div>
+                        <div class="item">
+                            <img src="protein-shake.svg"
+                                alt="Protein">
+                            <div class="label" style="margin-left: 15px;">PROTEIN</div>
+                        </div>
+                        <div class="item">
+                            <img src="minerals.svg"
+                                alt="Minerals">
+                            <div class="label" style="margin-left: 15px;">MINERALS</div>
+                        </div>
+                        <div class="item">
+                            <img src="metabolic-rate.svg"
+                                alt="Body Metabolic Rate">
+                            <div class="label">BODY METABOLIC RATE</div>
+                        </div>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="w65">
+                        <div class="second-section-row" style="margin-left: 30px;">
+                            <div class="w45">
+                                <div class="body-input">11.0 L</div>
+                            </div>
+                            <div class="w45">
+
+                                <div class="body-input">12.0 - 14.6</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-left: 30px;">
+                            <div class="w45">
+                                <div class="body-input">2.9 Kg</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input">3.2 - 4.0</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-left: 30px;">
+                            <div class="w45">
+                                <div class="body-input">1.18 Kg</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input">1.11 - 1.35</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-left: 30px;">
+                            <div class="w45">
+                                <div class="body-input">697 Kcal</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input">702 - 776</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Container -->
+            <div class="page3secondSectionInnerWr"
+                style="width: 30%; display: flex; align-items: center; justify-content: center;">
+                <div style="text-align: center;">
+
+                    <img style="width: 45px;"
+                        src="kcal.svg"
+                        alt="Recommended Calorie Intake">
+                    <div class="label" style="margin-top: 5px;"> RECOMMENDED <br> CALORIE <br> INTAKE </div>
+
+                    <div class="w60" style="margin-top: 10px;">
+                        <div class="body-input">1437 Kcal </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- First Section End -->
+
+        <!-- Second Section -->
+        <div class="section-divider">
+            <span class="section-title">Obesity Scan</span>
+            <div class="section-title">Muscle-Fat Scan</div>
+        </div>
+
+        <div class="flex-container-page5" style=" border-bottom: 1px solid #DDDDDD;">
+            <!-- Left Container -->
+            <div class="page3secondSectionInnerWr border-right" style="width: 50%;">
+                <div class="image-row" style="margin-bottom: 10px; gap: 20px; margin-top: 0;">
+                    <img class="image-small"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_01.png"
+                        alt="Decoration" style="width: 90px; height: 28px;">
+                    <img class="image-medium"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_02.png"
+                        alt="Decoration" style="width: 124px; height: 28px;">
+                </div>
+
+                <div class="content-row">
+                    <!-- Labels and label-span -->
+                    <div class="w30">
+                        <div class="pbf-item">
+                            <div class="label">PBF</div>
+                            <span class="label-span">(Percentage of Body Fat)</span>
+                        </div>
+                        <div class="pbf-item">
+                            <div class="label">VFL</div>
+                            <span class="label-span">(Visceral Fat Level)</span>
+                        </div>
+                        <div class="pbf-item">
+                            <div class="label">BFM</div>
+                            <span class="label-span">(Body Fat Mass)</span>
+                        </div>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="w70">
+                        <div class="second-section-row" style="margin-right: 10px;">
+                            <div class="w45">
+                                <div class="body-input-second">11.0 L</div>
+                            </div>
+                            <div class="w45">
+
+                                <div class="body-input-second">12.0 - 14.6</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-right: 10px;">
+                            <div class="w45">
+                                <div class="body-input-second">2.9 Kg</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input-second">3.2 - 4.0</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-right: 10px;">
+                            <div class="w45">
+                                <div class="body-input-second">1.18 Kg</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input-second">1.11 - 1.35</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Container -->
+            <div class="page3secondSectionInnerWr border-right" style="width: 50%;">
+                <div class="image-row" style="margin-bottom: 10px; gap: 20px;">
+                    <img class="image-small"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_01.png"
+                        alt="Decoration" style="width: 90px; height: 28px;">
+                    <img class="image-medium"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_02.png"
+                        alt="Decoration" style="width: 124px; height: 28px; margin-right: 3px;">
+                </div>
+
+                <div class="content-row">
+                    <!-- Labels and label-span -->
+                    <div class="w30">
+                        <div class="pbf-item">
+                            <div class="label">SMM</div>
+                            <span class="label-span">(Skeletal Muscle Mass)</span>
+                        </div>
+                        <div class="pbf-item">
+                            <div class="label">FFM</div>
+                            <span class="label-span">(Fat Free Mass)</span>
+                        </div>
+                        <div class="pbf-item">
+                            <div class="label">WHR</div>
+                            <span class="label-span">(Waist-Hip Ratio)</span>
+                        </div>
+                        <div class="pbf-item">
+                            <div class="label">SMI</div>
+                            <span class="label-span">(Skeletal Muscle Index)</span>
+                        </div>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="w70">
+                        <div class="second-section-row" style="margin-right: 10px;">
+                            <div class="w45">
+                                <div class="body-input-second">6.8 Kg</div>
+                            </div>
+                            <div class="w45">
+
+                                <div class="body-input-second">7.9 - 9.7</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-right: 10px;">
+                            <div class="w45">
+                                <div class="body-input-second">15.1 Kg</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input-second">16.3 - 19.9</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-right: 10px;">
+                            <div class="w45">
+                                <div class="body-input-second">0.75</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input-second">0.8 - 0.9</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-right: 10px;">
+                            <div class="w45">
+                                <div class="body-input-second">2.2 kg/M<sup>2</sup></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page3ftrwr">
+            <div class="page3ftrInrCont">
+                <img src="https://app.vigour360.com/assets/graph/seg_bg_01.png" alt="Left Image" />
+
+                <div class="text-box top-left">
+                    <p>2.11 Kg</p>
+                    <p>109.1%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box top-right">
+                    <p>2.05 Kg</p>
+                    <p>106.3%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box bottom-left">
+                    <p>5.46 Kg</p>
+                    <p>89.5%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box bottom-right">
+                    <p>2.05 Kg</p>
+                    <p>91.0%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box center-box">
+                    <p>2.05 Kg</p>
+                    <p>91.0%</p>
+                    <p>Normal</p>
+                </div>
+            </div>
+
+            <div class="page3ftrInrCont">
+                <img src="https://app.vigour360.com/assets/graph/seg_bg_02.png" alt="Right Image" />
+
+                <div class="text-box top-left">
+                    <p>2.11 Kg</p>
+                    <p>109.1%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box top-right">
+                    <p>2.05 Kg</p>
+                    <p>106.3%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box bottom-left">
+                    <p>5.46 Kg</p>
+                    <p>89.5%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box bottom-right">
+                    <p>2.05 Kg</p>
+                    <p>91.0%</p>
+                    <p>Normal</p>
+                </div>
+
+                <div class="text-box center-box">
+                    <p>2.05 Kg</p>
+                    <p>91.0%</p>
+                    <p>Normal</p>
+                </div>
+            </div>
+        </div>
+    <div class="footer-img-bottom" style="margin-top: 47px;">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/footer-image.png" alt="BMI chart">
+        </div>
+    </div>
+    <!-- Page 3 End -->
+
+    <!-- Page 4 Start -->
+    <div class="page">
+        <div class="banner-image">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/EyeExamination1.png"
+                alt="Eye Examination Header">
+            <!-- Prescription image would go here if present -->
+        </div>
+
+
+        <div style="width: 100%; display: flex; justify-content: center; margin-bottom: 20px;">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/case-33.png" alt="" style="width: 150px;">
+        </div>
+
+        <!-- Right Eye Examination -->
+        <div class="flex-container" style="width: 85%; margin-bottom: 18px;">
+            <div class="w20">
+                <img src="https://app.vigour360.com/assets/admin/images/image-pdf/eye-right.svg" alt="Right Eye">
+            </div>
+            <div class="w80">
+                <!-- SP, CY, AXIS -->
+                <div class="flex-container-second" style="margin-bottom: 10px;">
+                    <div class="w33">
+                        <div class="body-input">+3.00</div>
+                        <div class="bmi-label">SP DPT</div>
+                    </div>
+                    <div class="w33">
+                        <div class="body-input">+2.25</div>
+                        <div class="bmi-label">CY DPT</div>
+                    </div>
+                    <div class="w33">
+                        <div class="body-input">122</div>
+                        <div class="bmi-label">AXIS IN DEG</div>
+                    </div>
+                </div>
+                <!-- PUPIL SIZE, SE DPTH -->
+                <div class="flex-container-second">
+                    <div class="w33">
+                        <div class="body-input">4.5</div>
+                        <div class="bmi-label">PUPIL SIZE (mm)</div>
+                    </div>
+                    <div class="w33">
+                        <div class="body-input">+2.00</div>
+                        <div class="bmi-label">SE DPTH</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left Eye Examination -->
+        <div class="flex-container" style="width: 85%; margin-bottom: 25px;">
+            <div class="w20">
+                <img src="https://app.vigour360.com/assets/admin/images/image-pdf/eye-left.svg" alt="Left Eye">
+            </div>
+            <div class="w80">
+                <!-- SP, CY, AXIS -->
+                <div class="flex-container-second" style="margin-bottom: 10px;">
+                    <div class="w33">
+                        <div class="body-input">+2.25</div>
+                        <div class="bmi-label">SP DPT</div>
+                    </div>
+                    <div class="w33">
+                        <div class="body-input">+1.00</div>
+                        <div class="bmi-label">CY DPT</div>
+                    </div>
+                    <div class="w33">
+                        <div class="body-input">1</div>
+                        <div class="bmi-label">AXIS IN DEG</div>
+                    </div>
+                </div>
+                <!-- PUPIL SIZE, SE DPTH -->
+                <div class="flex-container-second">
+                    <div class="w33">
+                        <div class="body-input">4.6</div>
+                        <div class="bmi-label">PUPIL SIZE (mm)</div>
+                    </div>
+                    <div class="w33">
+                        <div class="body-input">+1.75</div>
+                        <div class="bmi-label">SE DPTH</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eye Conditions Row 1 -->
+        <div class="flex-container-page4">
+            <div class="flex-container-second">
+                <div style="width: 58%; margin-right:10px;" >
+                    <div class="eye-condition-text">Myopia (Near Sightedness)</div>
+                    <div class="eye-description-text" style="font-size: 11px;">Difficult in seeing faraway object</div>
+                </div>
+                <img style="width: 40%;" src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                    alt="Myopia Status">
+            </div>
+            <div class="flex-container">
+                <div style="width: 55%; margin-left:10px;">
+                    <div class="eye-condition-text">Anisometropia</div>
+                    <div class="eye-description-text" style="font-size: 11px;">Unequal refractive power</div>
+                </div>
+                <img style="width: 40%;" src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                    alt="Anisometropia Status">
+            </div>
+        </div>
+
+        <!-- Eye Conditions Row 2 -->
+        <div class="flex-container-page4">
+            <div class="flex-container">
+                <div style="width: 58%; margin-right:10px">
+                    <div class="eye-condition-text">Hyperopia (Far Sightedness)</div>
+                    <div class="eye-description-text" style="font-size: 11px;">Difficult in seeing near object</div>
+                </div>
+                <img style="width: 40%;" src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                    alt="Hyperopia Status">
+            </div>
+            <div class="flex-container">
+                <div style="width: 55%; margin-left:10px">
+                    <div class="eye-condition-text">Strabismus</div>
+                    <div class="eye-description-text" style="font-size: 11px;">Eye Misalignment</div>
+                </div>
+                <img style="width: 40%;" src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                    alt="Strabismus Status">
+            </div>
+        </div>
+
+        <!-- Eye Conditions Row 3 -->
+        <div class="flex-container-page4">
+            <div class="flex-container">
+                <div style="width: 58%; margin-right:10px">
+                    <div class="eye-condition-text">Astigmatism (Blurred vision)</div>
+                    <div class="eye-description-text" style="font-size: 11px;">Due to irregularly shaped cornea / curvature of lens
+                    </div>
+                </div>
+                <img style="width: 40%;" src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                    alt="Astigmatism Status">
+            </div>
+            <div class="flex-container">
+                <div style="width: 55%; margin-left:10px">
+                    <div class="eye-condition-text">Anisocoria</div>
+                    <div class="eye-description-text" style="font-size: 11px;">Unequal pupil size</div>
+                </div>
+                <img style="width: 40%;" src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                    alt="Anisocoria Status">
+            </div>
+        </div>
+
+        <!-- Vision Screening Result -->
+        <div class="visionary-result-wr" style="margin-top: 20px;">
+            <div class="kb-font heading-text">
+                Visionary <br> Screening <br> Result
+            </div>
+
+            <div class="visionary-result-inside-wr">
+                <!-- Normal Vision -->
+                <div class="vision-block">
+                    <div class="cardiovascular-square">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                            width="25px">
+                    </div>
+                    <div class="normal-text" style="font-family: 'Montserrat-Regular', sans-serif;">NORMAL VISION</div>
+                </div>
+
+                <!-- Abnormal Vision -->
+                <div class="vision-block">
+                    <div class="cardiovascular-square">
+
+                    </div>
+                    <div class="abnormal-text" style="font-family: 'Montserrat-Regular', sans-serif;">ABNORMAL VISION</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer Text -->
+        <div class="footer-text-content" style="margin-top: 20px;">
+            <div style="font-size: 12px; text-align: center; font-family: 'Montserrat-Regular', sans-serif;">REFER TO
+                OPTHALMOLOGIST</div>
+            <div style="margin-top: 8px; font-size: 14px; font-family: 'Montserrat-Regular', sans-serif;">
+                ***Vision Screening does not replace a complete eye examination. It is an Indicator of vision abnormalities if present. For exact reading, Dilation of eye is needed which causes blurred vision of 4 to 8 hours, performed only by an ophthalmologist at the clinical or Hospital setup
+            </div>
+            <div style="font-size: 14px; margin-top: 15px; text-align: center; font-family: 'Montserrat-Regular', sans-serif;">
+                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
+            </div>
+        </div>
+            <div class="footer-img-bottom" style="margin-top: 33px;">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/footer-image.png" alt="BMI chart">
+        </div>
+    </div>
+    <!-- Page 4 End -->
+
+    <!-- Page 5 Start -->
+    <div class="page">
+        <div class="banner-image">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/CardiovascularRespiratory1.png"
+                alt="Cardiovascular Header">
+        </div>
+
+        <!-- Cardiovascular Measurements Row 1 -->
+        <!-- Cardiovascular Measurements Rows -->
+        <div style="width: 100%; margin: 0 auto;">
+
+            <div class="bmi-stats-container">
+                <div class="bmi-stat">
+                    <div style="width: 130px; text-align: center;">
+                        <img class="cardiovascular-stats-img" src="cardio1.svg" alt="Weight icon" style="width: 80px;">
+                        <div class="bmi-label" style="font-size: 12px;">PULSE</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div class="bmi-input">29</div>
+                        <div class="bmi-label">BEATS / MIN</div>
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 130px; text-align: center;">
+                        <img class="cardiovascular-stats-img" src="cardio3.svg" alt="Blood Pressure"
+                            style="width: 55px;">
+                        <div class="bmi-label" style="font-size: 12px;">BLOOD PRESSURE</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div class="bmi-input">23/1</div>
+                        <div class="bmi-label">MMHG</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bmi-stats-container">
+                <div class="bmi-stat">
+                    <div style="width: 130px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/pdf/fever.png" alt="Weight icon"
+                            style="width: 75px;">
+                        <div class="bmi-label" style="font-size: 12px;">TEMPERATURE</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div class="bmi-input">30</div>
+                        <div class="bmi-label">TEMPERATURE <span>(&deg;F)</span></div>
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 130px; text-align: center;">
+                        <img class="cardiovascular-stats-img" src="cardio4.svg" alt="Blood Pressure"
+                            style="width: 55px;">
+                        <div class="bmi-label" style="font-size: 12px;">OXIMETRY</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div class="bmi-input">2</div>
+                        <div class="bmi-label">OXIMETRY(IN%)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bmi-stats-container">
+                <div class="bmi-stat">
+                    <div style="width: 130px; text-align: center;">
+                        <img class="cardiovascular-stats-img" src="cardio5.svg" alt="Heart Sound icon"
+                            style="width: 80px;">
+                            <div class="bmi-label" style="font-size: 12px;">HEART SOUND</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div class="bmi-input">Not Applicable</div>
+                        <div class="bmi-label">HEART SOUND</div>
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 130px; text-align: center;">
+                        <img class="cardiovascular-stats-img" src="cardio2.svg" alt="Lung Sound icon"
+                            style="width: 80px;">
+                        <div class="bmi-label" style="font-size: 12px;">LUNG SOUND</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div>
+                            <img style="width: 100%;"
+                                src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/normal.jpg"
+                                alt="Astigmatism Status">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Good Status Indicators -->
+        <div class="flex-container" style="width: 80%; margin: 0 auto;">
+            <div class="w10">
+                <img src="good.svg" alt="Right Eye" style="width: 50px;">
+            </div>
+            <div class="w90">
+                <!-- SP, CY, AXIS -->
+                <div class="flex-container-second" style="gap: 30px;">
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Pulse</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Blood Pressure</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Temperature</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Oximetry</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bad Status Indicators -->
+        <div class="flex-container" style="width: 80%; margin: 0 auto;">
+            <div class="w10">
+                <img src="bad.svg" alt="Right Eye" style="width: 50px;">
+            </div>
+            <div class="w90">
+                <!-- SP, CY, AXIS -->
+                <div class="flex-container-second" style="gap: 30px;">
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Pulse</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Blood Pressure</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Temperature</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">Oximetry</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Normal Range Section -->
+
+        <div class="footer-text-content" style="margin-top: 20px; margin-bottom: 30px; width: 80%;">
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif; color: #fc815f; margin-bottom: 10px;">Normal Range for adult:
+            </div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif;"></div>
+
+              <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif; color: #ffc66e;">Pulse Rate:</div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif; margin-bottom: 10px;">60 to 100 beats per minute.</div>
+
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif; color: #ffc66e;">Blood Pressure:
+                Pressure</div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif;">Normal Range - 120/80</div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif;">Elevated blood pressure - 120 to 129 /80 to 85</div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif;">Stage 1 high blood pressure-130 to 139 / 80 to 89</div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif; margin-bottom: 10px;">Stage 2 high blood pressure - 140 or higher / 90 or higher</div>
+
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif; color: #ffc66e;">Fever:</div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif; margin-bottom: 10px;">97.8 degrees F to 99 degrees F for a healthy adult.</div>
+
+            <div style="font-size: 13px;font-family: 'Montserrat-Regular', sans-serif; color: #ffc66e;">Oximetry (SpO2):</div>
+            <div style="font-size: 14px;font-family: 'Montserrat-Regular', sans-serif;">90% to 100%. Value under 90% are considered low.</div>
+        </div>
+        <div class="footer-text-content" style="margin-top: 20px; width: 93%; margin: 0 auto;">
+            <div style="margin-top: 8px; font-size: 15px; text-align:center; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+            **In children, the heart rate increases after playing or exercising vigorously, if they are stressed, experiencing a fever or illness, drinking energy drinks, etc. 
+            </div>
+        </div>
+        </div>
+            <div class="footer-img-bottom" style="margin-top: 130px;">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/footer-image.png" alt="BMI chart">
+        </div>
+    </div>
+    <!-- Page 5 End -->
+
+    <!-- Page 6 Start -->
+    <div class="page">
+        <div class="banner-image">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/DentalScreening1.png"
+                alt="Cardiovascular Header">
+        </div>
+
+        <div class="dental-teeth-table" style="margin-bottom: 15px;">
+            <table style="width: 80%;margin-left: auto;margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td
+                            style="text-align: center; height:200px;vertical-align: middle;border:1px solid #888;width: 350px">
+                            <img src="https://app.vigour360.com/assets/uploads/files/thumbnail/6d46a744fa.png"
+                                style="max-width: 100%;max-height: 100%;">
+                        </td>
+                        <td
+                            style="text-align: center; height:200px;vertical-align: middle;border:1px solid #888;width: 350px">
+                            <img src="https://app.vigour360.com/assets/uploads/files/thumbnail/8315381151.png"
+                                style="max-width: 100%;max-height: 100%;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div style="width: 100%; margin: 0 auto;">
+            <div class="bmi-stats-container" style="width: 80%; margin-bottom: 12px;">
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-1.svg" alt="Weight icon"
+                            style="width: 75px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            GUM INFLAMMATION</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-2.svg"
+                            alt="Blood Pressure" style="width: 60px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            CALCULUS</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bmi-stats-container" style="width: 80%; margin-bottom: 12px;">
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-3.svg" alt="Weight icon"
+                            style="width: 70px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            BLEEDING</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-4.svg"
+                            alt="Blood Pressure" style="width: 70px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            FILLING IN TEETH</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bmi-stats-container" style="width: 80%; margin-bottom: 12px;">
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-7.svg" alt="Weight icon"
+                            style="width: 65px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            STAINS</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-6.svg"
+                            alt="Blood Pressure" style="width: 65px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            ALIGNMENT OF TEETH</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/normal.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bmi-stats-container" style="width: 80%; margin-bottom: 15px;">
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-5.svg" alt="Weight icon"
+                            style="width: 65px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            CARIES</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 170px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/Dental-8.svg"
+                            alt="Blood Pressure" style="width: 85px;">
+                        <div class="bmi-label" style="font-size: 10px; text-transform: uppercase; font-weight: bold;">
+                            PLAQUE</div>
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg" alt=""
+                            style="width: 150px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div>  
+            <div class="label" style="color: #E7C84E; font-size: 12px;">CHILD CARIES</div>
+
+            <!-- Upper row -->
+            <div class="teeth-container">
+                <div class="tooth">55</div>
+                <div class="tooth">54</div>
+                <div class="tooth caries">53</div>
+                <div class="tooth caries">52</div>
+                <div class="tooth">51</div>
+                <div class="divider"></div>
+                <div class="tooth">61</div>
+                <div class="tooth">62</div>
+                <div class="tooth caries">63</div>
+                <div class="tooth">64</div>
+                <div class="tooth">65</div>
+            </div>
+            <div class="w70"
+                style="background-color: #000; height: 1px; margin: 0 auto; margin-bottom: 5px; margin-top: 0;"></div>
+            <!-- Lower row -->
+            <div class="teeth-container">
+                <div class="tooth">85</div>
+                <div class="tooth">84</div>
+                <div class="tooth caries">83</div>
+                <div class="tooth caries">82</div>
+                <div class="tooth">81</div>
+                <div class="divider"></div>
+                <div class="tooth">71</div>
+                <div class="tooth caries">72</div>
+                <div class="tooth">73</div>
+                <div class="tooth">74</div>
+                <div class="tooth caries">75</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="label" style="color: #E7C84E; font-size: 12px; padding-top: 8px;">ADULT CARIES</div>
+
+            <!-- Upper row -->
+            <div class="teeth-container">
+                <div class="tooth">18</div>
+                <div class="tooth">17</div>
+                <div class="tooth">16</div>
+                <div class="tooth caries">15</div>
+                <div class="tooth caries">14</div>
+                <div class="tooth">13</div>
+                <div class="tooth caries">12</div>
+                <div class="tooth">11</div>
+                <div class="divider"></div>
+                <div class="tooth caries">12</div>
+                <div class="tooth">22</div>
+                <div class="tooth">23</div>
+                <div class="tooth">24</div>
+                <div class="tooth">25</div>
+                <div class="tooth">26</div>
+                <div class="tooth">27</div>
+                <div class="tooth caries">28</div>
+            </div>
+            <div class="w70"
+                style="background-color: #000; height: 1px; margin: 0 auto; margin-bottom: 5px; margin-top: 0;"></div>
+            <!-- Lower row -->
+            <div class="teeth-container">
+                <div class="tooth">48</div>
+                <div class="tooth">47</div>
+                <div class="tooth">46</div>
+                <div class="tooth">45</div>
+                <div class="tooth caries">44</div>
+                <div class="tooth caries">43</div>
+                <div class="tooth">42</div>
+                <div class="tooth">41</div>
+                <div class="divider"></div>
+                <div class="tooth">31</div>
+                <div class="tooth ">32</div>
+                <div class="tooth caries">33</div>
+                <div class="tooth">34</div>
+                <div class="tooth caries">35</div>
+                <div class="tooth">36</div>
+                <div class="tooth">37</div>
+                <div class="tooth">38</div>
+            </div>
+        </div>
+
+        <div class="footer-text-content" style="margin-top: 21px; ">
+            <div style="margin-top: 8px; font-size: 15px; text-align:center; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+                **Dental screening is done by intra oral camera. The process was very much transparent with the school
+                staff
+            </div>
+            <div style="font-size: 13px; margin-top: 10px; text-align: center; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
+            </div>
+        </div>
+               </div>
+            <div class="footer-img-bottom" style="margin-top: 20px;">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/footer-image.png" alt="BMI chart">
+        </div>
+    </div>
+    <!-- Page 6 End -->
+
+    <!-- Page 7 Start -->
+    <div class="page">
+        <div class="banner-image">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/EarNoseThroat1.png"
+                alt="Cardiovascular Header">
+        </div>
+
+        <div class="flex-container-second" style="width: 100%;padding-left: 50px;margin-left: -50px;gap:0">
+            <!-- ============ 1st box ============ -->
+            <div style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 80%;
+                margin: 0 auto;
+                gap: 8px;
+            ">
+                <div>
+                    <img style="width: 75px;" src="https://app.vigour360.com/assets/admin/images/image-pdf/ear1.svg"
+                        alt="Ear 1" />
+                </div>
+                <div style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    align-items: center;
+                    ">
+                    <p style="font-size: 12px; text-align: center; font-family: 'Montserrat-Regular', sans-serif;">EAR WAX</p>
+                    <img style="width: 150px;"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                        alt="Ear Wax 1" />
+                    <img style="width: 150px;"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                        alt="Ear Wax 2" />
+                    <p style="margin-top: 0px; font-size: 12px; text-align: center; font-family: 'Montserrat-Regular', sans-serif;">EAR DRUM</p>
+                </div>
+            </div>
+
+            <!-- ============ 2nd box ============ -->
+            <div style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 90%;
+                margin: 0 auto;
+                gap: 8px;
+            ">
+                <div style="text-align: center;">
+                    <img style="width: 100px;" src="https://app.vigour360.com/assets/admin/images/image-pdf/ear2.svg"
+                        alt="Ear 2" />
+                    <p style="margin-top: 2px; font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">NASAL TRACK</p>
+                </div>
+                <div>
+                    <img style="width: 150px;"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/normal.jpg"
+                        alt="Nasal Track Image" />
+                </div>
+            </div>
+
+            <!-- ============ 3rd box ============ -->
+            <div style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 90%;
+                margin: 0 auto;
+                gap: 8px;
+            ">
+                <div style="text-align: center;">
+                    <img style="width: 110px;" src="https://app.vigour360.com/assets/admin/images/image-pdf/ear3.svg"
+                        alt="Ear 3" />
+                    <p style="margin-top: 2px; font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">TONSILS</p>
+                </div>
+                <div>
+                    <img style="width: 150px;"
+                        src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg"
+                        alt="Tonsils Image" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Good Status Indicators -->
+        <div class="flex-container" style="width: 80%; margin: 0 auto; align-items: center;">
+            <div class="w30">
+                <img src="good.svg" alt="Right Eye" style="width: 50px;">
+                <div class="bmi-label" style="font-size: 12px; text-align: left; width: 260px; font-family: 'Montserrat-Regular', sans-serif;">KEEP
+                    IT UP</div>
+            </div>
+            <div class="w70">
+                <!-- SP, CY, AXIS -->
+                <div class="flex-container-second" style="gap: 30px;">
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">EAR</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">NOSE</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">THROAT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bad Status Indicators -->
+        <div class="flex-container" style="width: 80%; margin: 0 auto;">
+            <div class="w30">
+                <img src="bad.svg" alt="Right Eye" style="width: 50px;">
+                <div class="bmi-label" style="font-size: 12px; text-align: left; width: 260px; font-family: 'Montserrat-Regular', sans-serif;">
+                    IMMEDIATE ACTION REQUIRED</div>
+            </div>
+            <div class="w70">
+                <!-- SP, CY, AXIS -->
+                <div class="flex-container-second" style="gap: 30px;">
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">EAR</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">NOSE</div>
+                    </div>
+                    <div class="vision-block">
+                        <div class="cardiovascular-square" style="border: 1px solid #000;">
+                            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/check.png" alt=""
+                                width="25px">
+                        </div>
+                        <div class="bmi-label" style="font-size: 12px; font-family: 'Montserrat-Regular', sans-serif;">THROAT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-text-content">
+            <div style="margin-top: 10px; text-align: center; font-size: 14px; font-family: 'Montserrat-Regular', sans-serif;">
+                * Ear Nose and Throat is examined manually with help of Digital Otoscope device, This is just outer
+                check-up
+            </div>
+        </div>
+
+
+        <div class="section-divider" style="border: 0; margin-top: 20px; margin-bottom: 20px;">
+            <span class="section-title" style=" font-size: 45px;">General Examination</span>
+        </div>
+
+        <div class="flex-container" style="width: 80%; margin: 0 auto;">
+            <div class="w20">
+                <img src="https://app.vigour360.com/assets/admin/images/image-pdf/general-1.svg" alt="Right Eye"
+                    style="width: 150px;">
+            </div>
+            <div class="w80">
+                <!-- SP, CY, AXIS -->
+                <div class="flex-container-second" style="gap: 10px;">
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">pallor</div>
+                    </div>
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">LYMPHADENOPATHY</div>
+                    </div>
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">EDEMA</div>
+                    </div>
+                </div>
+                <div class="flex-container-second" style="gap: 10px;">
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/normal.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">SKIN</div>
+                    </div>
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">CYANOSIS</div>
+                    </div>
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">ICTERUS</div>
+                    </div>
+                </div>
+                <div class="flex-container-second" style="gap: 10px;">
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/present.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">ALLERGY</div>
+                    </div>
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/absent.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">STOMACH ACHE</div>
+                    </div>
+                    <div class="vision-block">
+                        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/normal.jpg" alt=""
+                            style="width: 150px;">
+                        <div class="bmi-label" style="font-size: 12px; text-transform: uppercase; font-family: 'Montserrat-Regular', sans-serif;">CNS PARAMETER</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider" style="border: 0; margin-top: 20px; margin-bottom: 20px;">
+            <span class="section-title" style=" font-size: 45px;">Hygiene</span>
+        </div>
+
+        <div style="width: 100%; margin: 0 auto;">
+
+            <div class="bmi-stats-container">
+                <div class="bmi-stat">
+                    <div style="width: 120px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/general-2.svg"
+                            alt="Weight icon" style="width: 80px;">
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div class="bmi-input">BAD</div>
+                        <div class="bmi-label">NAIL HYGIENE</div>
+                    </div>
+                </div>
+
+                <div class="bmi-stat">
+                    <div style="width: 120px; text-align: center;">
+                        <img class="cardiovascular-stats-img"
+                            src="https://app.vigour360.com/assets/admin/images/image-pdf/general-3.svg"
+                            alt="Blood Pressure" style="width: 55px;">
+                    </div>
+                    <div class="bmi-stats-inner">
+                        <div class="bmi-input">GOOD</div>
+                        <div class="bmi-label">HAIR HYGIENE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+            <div class="footer-img-bottom" style="margin-top: 37px;">
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/footer-image.png" alt="BMI chart">
+        </div>
+    </div>
+    <!-- Page 7 End -->
+
+    <!-- Page 8 Start -->
+    <div class="page">
+        <div class="banner-image">
+            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/exam_back.svg"
+                alt="Cardiovascular Header">
+        </div>
+
+
+        <div style="padding: 15px; margin-top: 0; border: 2px solid #000; width: 93%; margin: 0 auto;">
+
+            <div class="section-title" style=" font-size: 18px; text-align: left;">Final Notes :</div>
+
+            <div class="bmi-label" style="text-align: left;">
+                All test results seem normal, Except the following :<br>BMI percentile status is Under Weight. <br>Body
+                Fat Mass is Low. <br>
+                Fat Free Mass is Low. <br>
+                Myopia is present. <br>
+                Strabismus is present. <br>
+                Anisocoria is present. <br>
+                Abnormal vision identified. <br>
+                Gum Inflammation was found. <br>
+                Bleeding was found. <br>
+                Caries was found. <br>
+                Calculus was found. <br>
+                Stains was found. <br>
+                Fljsbfslbf fsfsf sf sfksn f nsknf nsf s fsfsn f smf n snf sfsf s n fmn sfsfsjfj s fsnf sjfsnfsf sfsjfs
+                fs n vbd nb bndcbv vubjvjd n fn dfbdf bdfdfd8fudfd gfdfvdfu dfk <br>
+                Waist- Hip Ratio is High
+            </div>
+        </div>
+
+        <div style="margin-top: 10px;"></div>
+
+        <div style="padding: 15px; border: 2px solid #000; width: 93%; margin: 0 auto;">
+
+            <div class="section-title" style=" font-size: 18px; text-align: left;">Additional Notes :</div>
+
+            <div class="bmi-label" style="text-align: left;">
+                <ul class="clearfix" style="padding:0;clear:both;margin: 0 0 0 0;list-style:none;">
+                    <li
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;">
+                        <div class="notes-icon" style="margin-right: 15px;">
+                            <strong>Biometric Screening : </strong>
+                            <span>Your BMI is&nbsp;<b>8.43</b>, indicating your weight is in the <b>Under Weight</b>
+                                category for adults of your height. BMI is a screening measure and is not intended to
+                                diagnose disease or illness. Consult a Dietitian as BMI may relate to your overall
+                                health and well-being.</span>
+                        </div>
+                    </li>
+                    <li
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
+                        <div class="notes-icon" style="margin-right: 15px;">
+                            <strong>Dental Screening : </strong>
+                            <span>This is testiing notes</span>
+                        </div>
+                    </li>
+                    <li
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
+                        <div class="notes-icon" style="margin-right: 15px;">
+                            <strong>Ear, Nose, Throat Examination : </strong>
+                            <span>If you want to modify native editor notification, you can: Catch the notificationShow
+                                event; Process it according to your needs; Cancel ...</span>
+                        </div>
+                    </li>
+                    <li
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
+                        <div class="notes-icon" style="margin-right: 15px;">
+                            <strong>Cardiovascular and Respiratory : </strong>
+                            <span>If you want to modify native editor notification, you can: Catch the notificationShow
+                                event; Process it according to your needs; Cancel ...
+                                If you want to modify native editor notification, you can: Catch the notificationShow
+                                event; Process it according to your needs; Cancel ...</span>
+                        </div>
+                    </li>
+                    <li
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
+                        <div class="notes-icon" style="margin-right: 15px;;">
+                            <strong>General Examination : </strong>
+                            <span>If you want to modify native editor notification, you can: Catch the notificationShow
+                                event; Process it according to your needs; Cancel .</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+            <div style="width: 93%; margin: 0 auto;">
+
+            <div class="section-title" style=" font-size: 30px; text-align: center; margin-top: 10px;">--- End Of Report ---</div>
+                 <div style="font-size: 13px; margin-top: 10px; text-align: center; font-family: 'Montserrat', sans-serif;">
+                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
+            </div>
+            </div>
+
+        <!-- <div class="footer-text-content" style="margin-top: 20px; ">
+            <div style="margin-top: 8px; font-size: 14px; font-family: 'Montserrat', sans-serif;">
+                * Dental screening is done by intra oral camera. The process was very much transparent with the school
+                staff
+            </div>
+            <div style="font-size: 12px; margin-top: 10px; text-align: center; font-family: 'Montserrat', sans-serif;">
+                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
+            </div>
+        </div> -->
+    </div>
+    <!-- Page 8 End -->
+
+</body>
+
+</html>

@@ -16,7 +16,6 @@
             font-weight: normal;
             font-style: normal;
         }
-
         /* Montserrat fonts */
         @font-face {
             font-family: 'Montserrat';
@@ -176,6 +175,17 @@
             width: 100%;
             text-align: center;
             margin-top: 3px;
+            font-style: normal;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .bmi-label-m{
+             font-size: 16px;
+            width: 100%;
+            text-align: center;
+            margin-left: -30px;
+            margin-top: -12px;
             font-style: normal;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -355,7 +365,7 @@
             align-items: flex-end;
             justify-content: flex-end;
             width: 100%;
-            gap: 55px;
+            gap: 75px;
         }
 
         .image-small {
@@ -381,8 +391,8 @@
             align-items: center;
             justify-content: space-between;
             gap: 20px;
-            padding-top: 6px;
-            padding-bottom: 6px;
+            /* padding-top: 6px;
+            padding-bottom: 6px; */
             width: 100%;
             margin: 0 auto;
         }
@@ -438,9 +448,26 @@
             font-size: 16px;
             padding: 12px 0px 0px 0px !important;
             text-align: center;
-            box-shadow: 8px 5px 20px 0px #d5d5d5;
+            /* box-shadow: 8px 5px 20px 0px #d5d5d5; */
             width: 160px;
             height: 30px;
+        }
+
+        .bmi-input-img{
+            padding: 23px 0px 0px 0px;
+            background-image: url('bmi-1.png');
+            background-size: cover;
+            width: 206px;
+            height: 49px;
+        }
+
+        .eye-input-img{
+            padding: 20px 0px 3px 0px;
+            background-image: url('bmi-1.png');
+            background-size: cover;
+            width: 175px;
+            height: 38px;
+            text-align: center;
         }
 
         .content-row {
@@ -493,6 +520,8 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+
+
         .body-input {
             font-size: 14px;
             color: #000000;
@@ -501,9 +530,37 @@
             border: 1px solid #000000;
             border-radius: 30px;
             padding: 9px 10px;
-            box-shadow: 8px 5px 20px 0px #d5d5d5;
-            /* background-color: #f8f8f8; */
+            /* box-shadow: 8px 5px 20px 0px #d5d5d5; */
+            background-color: #fff;
         }
+
+        .body-input-img{
+            padding: 11px 0px 3px 0px;
+            background-image: url('bmi-2.png');
+            background-size: cover;
+            text-align: center;
+            width: 177px;
+            height: 40px;
+        }
+
+        .body-input-imge{
+            padding: 17px 20px 0px 0px;
+            background-image: url('bmi-3.png');
+                background-size: cover;
+                text-align: center;
+                width: 140px;
+                height: 50px;
+        }
+
+        .body-input-second-img{
+            padding: 11px 10px 0px 0px;
+            background-image: url('bmi-4.png');
+            background-size: cover;
+            text-align: center;
+            width: 131px;
+            height: 40px;
+        }
+
 
         .body-input-second {
             font-size: 14px;
@@ -872,16 +929,16 @@
                 <img class="bmi-stats-img" src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img1.svg"
                     alt="Weight icon">
                 <div class="bmi-stats-inner" style="margin-left: 15px;">
-                    <div class="bmi-input">56</div>
-                    <div class="bmi-label">WEIGHT/ KGS</div>
+                    <div class="bmi-input-img">56</div>
+                    <div class="bmi-label-m">WEIGHT/ KGS</div>
                 </div>
             </div>
             <div class="bmi-stat">
                 <img class="bmi-stats-img" src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img2.svg"
                     alt="Height icon" style="width: 100px; float: left;">
                 <div class="bmi-stats-inner">
-                    <div class="bmi-input">150</div>
-                    <div class="bmi-label">HEIGHT/CMS</div>
+                    <div class="bmi-input-img">150</div>
+                    <div class="bmi-label-m">HEIGHT/CMS</div>
                 </div>
             </div>
         </div>
@@ -890,13 +947,13 @@
             <div class="bmi-stat">
                 <img class="bmi-stats-img" src="/bio-img3.svg" alt="BMI icon">
                 <div class="bmi-stats-inner" style="margin-left: 15px;">
-                    <div class="bmi-input">24.9</div>
-                    <div class="bmi-label">BMI</div>
+                    <div class="bmi-input-img">24.9</div>
+                    <div class="bmi-label-m">BMI</div>
                 </div>
             </div>
             <div class="bmi-stat">
-                <div style="width: 100%; text-align: center;">
-                    <div class="bmi-input" style="background-color: #1eb581; width: 300px;">NORMAL</div>
+                <div style="width: 100%; text-align: center; padding-top: 10px;">
+                    <div class="bmi-input" style="background-color: #1eb581; width: 300px; height: 35px;">NORMAL</div>
                     <div class="bmi-label">BMI PERCENTILE STATUS</div>
                 </div>
             </div>
@@ -983,35 +1040,34 @@
                     <div class="w65">
                         <div class="second-section-row" style="margin-left: 30px;">
                             <div class="w45">
-                                <div class="body-input">11.0 L</div>
+                                <div class="body-input-img" style="margin-left: 6px;">11.0 L</div>
                             </div>
                             <div class="w45">
-
-                                <div class="body-input">12.0 - 14.6</div>
-                            </div>
-                        </div>
-                        <div class="second-section-row" style="margin-left: 30px;">
-                            <div class="w45">
-                                <div class="body-input">2.9 Kg</div>
-                            </div>
-                            <div class="w45">
-                                <div class="body-input">3.2 - 4.0</div>
+                                <div class="body-input-img" style="margin-right: -10px;">12.0 - 14.6</div>
                             </div>
                         </div>
                         <div class="second-section-row" style="margin-left: 30px;">
                             <div class="w45">
-                                <div class="body-input">1.18 Kg</div>
+                                <div class="body-input-img" style="margin-left: 6px;">2.9 Kg</div>
                             </div>
                             <div class="w45">
-                                <div class="body-input">1.11 - 1.35</div>
+                                <div class="body-input-img" style="margin-right: -10px;">3.2 - 4.0</div>
                             </div>
                         </div>
                         <div class="second-section-row" style="margin-left: 30px;">
                             <div class="w45">
-                                <div class="body-input">697 Kcal</div>
+                                <div class="body-input-img" style="margin-left: 6px;">1.18 Kg</div>
                             </div>
                             <div class="w45">
-                                <div class="body-input">702 - 776</div>
+                                <div class="body-input-img" style="margin-right: -10px;">1.11 - 1.35</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-left: 30px;">
+                            <div class="w45">
+                                <div class="body-input-img" style="margin-left: 6px;">697 Kcal</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input-img" style="margin-right: -10px;">702 - 776</div>
                             </div>
                         </div>
                     </div>
@@ -1029,7 +1085,7 @@
                     <div class="label" style="margin-top: 5px;"> RECOMMENDED <br> CALORIE <br> INTAKE </div>
 
                     <div class="w60" style="margin-top: 10px;">
-                        <div class="body-input">1437 Kcal </div>
+                        <div class="body-input-imge">1437 Kcal </div>
                     </div>
                 </div>
             </div>
@@ -1044,8 +1100,8 @@
 
         <div class="flex-container-page5" style=" border-bottom: 1px solid #DDDDDD;">
             <!-- Left Container -->
-            <div class="page3secondSectionInnerWr border-right" style="width: 50%; height: 220px;">
-                <div class="image-row" style="margin-bottom: 10px; gap: 20px; margin-top: 0;">
+            <div class="page3secondSectionInnerWr border-right" style="width: 46%; height: 239px;">
+                <div class="image-row" style="margin-bottom: 10px; gap: 30px; margin-top: 0; width: 100%;">
                     <img class="image-small"
                         src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_01.png"
                         alt="Decoration" style="width: 90px; height: 28px;">
@@ -1056,7 +1112,7 @@
 
                 <div class="content-row">
                     <!-- Labels and label-span -->
-                    <div class="w30">
+                    <div class="w30" style="justify-content: flex-start; gap: 25px;">
                         <div class="pbf-item">
                             <div class="label">PBF</div>
                             <span class="label-span">(Percentage of Body Fat)</span>
@@ -1073,29 +1129,29 @@
 
                     <!-- Values -->
                     <div class="w70">
-                        <div class="second-section-row" style="margin-right: 10px;">
+                        <div class="second-section-row" style="margin-right: 10px; gap: 15px;  margin-bottom: 8px;">
                             <div class="w45">
-                                <div class="body-input-second">11.0 L</div>
+                                <div class="body-input-second-img">11.0 L</div>
                             </div>
                             <div class="w45">
 
-                                <div class="body-input-second">12.0 - 14.6</div>
+                                <div class="body-input-second-img">12.0 - 14.6</div>
                             </div>
                         </div>
-                        <div class="second-section-row" style="margin-right: 10px;">
+                        <div class="second-section-row" style="margin-right: 10px; gap: 15px;  margin-bottom: 8px;">
                             <div class="w45">
-                                <div class="body-input-second">2.9 Kg</div>
+                                <div class="body-input-second-img">2.9 Kg</div>
                             </div>
                             <div class="w45">
-                                <div class="body-input-second">3.2 - 4.0</div>
+                                <div class="body-input-second-img">3.2 - 4.0</div>
                             </div>
                         </div>
-                        <div class="second-section-row" style="margin-right: 10px;">
+                        <div class="second-section-row" style="margin-right: 10px; gap: 15px;">
                             <div class="w45">
-                                <div class="body-input-second">1.18 Kg</div>
+                                <div class="body-input-second-img">1.18 Kg</div>
                             </div>
                             <div class="w45">
-                                <div class="body-input-second">1.11 - 1.35</div>
+                                <div class="body-input-second-img">1.11 - 1.35</div>
                             </div>
                         </div>
 
@@ -1104,8 +1160,8 @@
             </div>
 
             <!-- Right Container -->
-            <div class="page3secondSectionInnerWr border-right" style="width: 50%;">
-                <div class="image-row" style="margin-bottom: 10px; gap: 20px;">
+            <div class="page3secondSectionInnerWr border-right" style="width: 46%;">
+                <div class="image-row" style="margin-bottom: 10px; gap: 30px; width: 100%;">
                     <img class="image-small"
                         src="https://app.vigour360.com/assets/admin/images/image-pdf/red_img_new_01.png"
                         alt="Decoration" style="width: 90px; height: 28px;">
@@ -1116,7 +1172,7 @@
 
                 <div class="content-row">
                     <!-- Labels and label-span -->
-                    <div class="w30">
+                    <div class="w30" style="justify-content: flex-start; gap: 20px;">
                         <div class="pbf-item">
                             <div class="label">SMM</div>
                             <span class="label-span">(Skeletal Muscle Mass)</span>
@@ -1137,34 +1193,34 @@
 
                     <!-- Values -->
                     <div class="w70">
-                        <div class="second-section-row" style="margin-right: 10px;">
+                        <div class="second-section-row" style="margin-right: 10px; gap: 15px;">
                             <div class="w45">
-                                <div class="body-input-second">6.8 Kg</div>
+                                <div class="body-input-second-img">6.8 Kg</div>
                             </div>
                             <div class="w45">
 
-                                <div class="body-input-second">7.9 - 9.7</div>
+                                <div class="body-input-second-img">7.9 - 9.7</div>
                             </div>
                         </div>
-                        <div class="second-section-row" style="margin-right: 10px;">
+                        <div class="second-section-row" style="margin-right: 10px; gap: 15px;">
                             <div class="w45">
-                                <div class="body-input-second">15.1 Kg</div>
+                                <div class="body-input-second-img">15.1 Kg</div>
                             </div>
                             <div class="w45">
-                                <div class="body-input-second">16.3 - 19.9</div>
-                            </div>
-                        </div>
-                        <div class="second-section-row" style="margin-right: 10px;">
-                            <div class="w45">
-                                <div class="body-input-second">0.75</div>
-                            </div>
-                            <div class="w45">
-                                <div class="body-input-second">0.8 - 0.9</div>
+                                <div class="body-input-second-img">16.3 - 19.9</div>
                             </div>
                         </div>
-                        <div class="second-section-row" style="margin-right: 10px;">
+                        <div class="second-section-row" style="margin-right: 10px; gap: 15px;">
                             <div class="w45">
-                                <div class="body-input-second">2.2 kg/M<sup>2</sup></div>
+                                <div class="body-input-second-img">0.75</div>
+                            </div>
+                            <div class="w45">
+                                <div class="body-input-second-img">0.8 - 0.9</div>
+                            </div>
+                        </div>
+                        <div class="second-section-row" style="margin-right: 10px; gap: 15px;">
+                            <div class="w45">
+                                <div class="body-input-second-img" style="padding-top: 8px;">2.2 kg/M<sup>2</sup></div>
                             </div>
                         </div>
                     </div>
@@ -1269,27 +1325,27 @@
                 <!-- SP, CY, AXIS -->
                 <div class="flex-container-second" style="margin-bottom: 10px;">
                     <div class="w33">
-                        <div class="body-input">+3.00</div>
-                        <div class="bmi-label">SP DPT</div>
+                        <div class="eye-input-img">+3.00</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">SP DPT</div>
                     </div>
                     <div class="w33">
-                        <div class="body-input">+2.25</div>
-                        <div class="bmi-label">CY DPT</div>
+                        <div class="eye-input-img">+2.25</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">CY DPT</div>
                     </div>
                     <div class="w33">
-                        <div class="body-input">122</div>
-                        <div class="bmi-label">AXIS IN DEG</div>
+                        <div class="eye-input-img">122</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">AXIS IN DEG</div>
                     </div>
                 </div>
                 <!-- PUPIL SIZE, SE DPTH -->
                 <div class="flex-container-second">
                     <div class="w33">
-                        <div class="body-input">4.5</div>
-                        <div class="bmi-label">PUPIL SIZE (mm)</div>
+                        <div class="eye-input-img">4.5</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">PUPIL SIZE (mm)</div>
                     </div>
                     <div class="w33">
-                        <div class="body-input">+2.00</div>
-                        <div class="bmi-label">SE DPTH</div>
+                        <div class="eye-input-img">+2.00</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">SE DPTH</div>
                     </div>
                 </div>
             </div>
@@ -1304,27 +1360,27 @@
                 <!-- SP, CY, AXIS -->
                 <div class="flex-container-second" style="margin-bottom: 10px;">
                     <div class="w33">
-                        <div class="body-input">+2.25</div>
-                        <div class="bmi-label">SP DPT</div>
+                        <div class="eye-input-img">+2.25</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">SP DPT</div>
                     </div>
                     <div class="w33">
-                        <div class="body-input">+1.00</div>
-                        <div class="bmi-label">CY DPT</div>
+                        <div class="eye-input-img">+1.00</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">CY DPT</div>
                     </div>
                     <div class="w33">
-                        <div class="body-input">1</div>
-                        <div class="bmi-label">AXIS IN DEG</div>
+                        <div class="eye-input-img">1</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">AXIS IN DEG</div>
                     </div>
                 </div>
                 <!-- PUPIL SIZE, SE DPTH -->
                 <div class="flex-container-second">
                     <div class="w33">
-                        <div class="body-input">4.6</div>
-                        <div class="bmi-label">PUPIL SIZE (mm)</div>
+                        <div class="eye-input-img">4.6</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">PUPIL SIZE (mm)</div>
                     </div>
                     <div class="w33">
-                        <div class="body-input">+1.75</div>
-                        <div class="bmi-label">SE DPTH</div>
+                        <div class="eye-input-img">+1.75</div>
+                        <div class="bmi-label-m" style="margin-left: 0px;">SE DPTH</div>
                     </div>
                 </div>
             </div>
@@ -1453,8 +1509,8 @@
                         <div class="bmi-label" style="font-size: 12px;">PULSE</div>
                     </div>
                     <div class="bmi-stats-inner">
-                        <div class="bmi-input">29</div>
-                        <div class="bmi-label">BEATS / MIN</div>
+                        <div class="bmi-input-img" style="margin-left: -22px;">29</div>
+                        <div class="bmi-label-m">BEATS / MIN</div>
                     </div>
                 </div>
 
@@ -1465,8 +1521,8 @@
                         <div class="bmi-label" style="font-size: 12px;">BLOOD PRESSURE</div>
                     </div>
                     <div class="bmi-stats-inner">
-                        <div class="bmi-input">23/1</div>
-                        <div class="bmi-label">MMHG</div>
+                        <div class="bmi-input-img" style="margin-left: -22px;">23/1</div>
+                        <div class="bmi-label-m">MMHG</div>
                     </div>
                 </div>
             </div>
@@ -1480,8 +1536,8 @@
                         <div class="bmi-label" style="font-size: 12px;">TEMPERATURE</div>
                     </div>
                     <div class="bmi-stats-inner">
-                        <div class="bmi-input">30</div>
-                        <div class="bmi-label">TEMPERATURE <span>(&deg;F)</span></div>
+                        <div class="bmi-input-img" style="margin-left: -22px;">30</div>
+                        <div class="bmi-label-m">TEMPERATURE <span>(&deg;F)</span></div>
                     </div>
                 </div>
 
@@ -1492,8 +1548,8 @@
                         <div class="bmi-label" style="font-size: 12px;">OXIMETRY</div>
                     </div>
                     <div class="bmi-stats-inner">
-                        <div class="bmi-input">2</div>
-                        <div class="bmi-label">OXIMETRY(IN%)</div>
+                        <div class="bmi-input-img" style="margin-left: -22px;">2</div>
+                        <div class="bmi-label-m">OXIMETRY(IN%)</div>
                     </div>
                 </div>
             </div>
@@ -1507,16 +1563,16 @@
                     </div>
                     <div class="bmi-stats-inner">
                         <div>
-                              <img style="width: 100%;"
-                                src="http://app.vigour360.com/assets/admin/images/image-pdf/entry/abnormal.jpg"
-                                alt="Astigmatism Status">
+                              <img style="width: 100%; margin-left: 15px;"
+                                src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/normal.jpg"
+                                alt="Abnormal Status">
                         </div>
                        
                     </div>
                 </div>
 
                 <div class="bmi-stat">
-                    <div style="width: 130px; text-align: center;">
+                    <div style="width: 130px; text-align: center; margin-left: 50px;">
                         <img class="cardiovascular-stats-img" src="cardio2.svg" alt="Lung Sound icon"
                             style="width: 80px;">
                         <div class="bmi-label" style="font-size: 12px;">LUNG SOUND</div>
@@ -1525,7 +1581,7 @@
                         <div>
                             <img style="width: 100%;"
                                 src="https://app.vigour360.com/assets/admin/images/image-pdf/entry/normal.jpg"
-                                alt="Astigmatism Status">
+                                alt="Normal Status">
                         </div>
                     </div>
                 </div>
@@ -2137,8 +2193,8 @@
                             alt="Weight icon" style="width: 80px;">
                     </div>
                     <div class="bmi-stats-inner">
-                        <div class="bmi-input">BAD</div>
-                        <div class="bmi-label">NAIL HYGIENE</div>
+                        <div class="bmi-input-img">BAD</div>
+                        <div class="bmi-label-m">NAIL HYGIENE</div>
                     </div>
                 </div>
 
@@ -2149,8 +2205,8 @@
                             alt="Blood Pressure" style="width: 55px;">
                     </div>
                     <div class="bmi-stats-inner">
-                        <div class="bmi-input">GOOD</div>
-                        <div class="bmi-label">HAIR HYGIENE</div>
+                        <div class="bmi-input-img">GOOD</div>
+                        <div class="bmi-label-m">HAIR HYGIENE</div>
                     </div>
                 </div>
             </div>
@@ -2161,16 +2217,16 @@
     <!-- Page 8 Start -->
     <div class="page">
         <div class="banner-image">
-            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/exam_back.svg"
-                alt="Cardiovascular Header">
+            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/exam_back.svg" alt="Cardiovascular Header">
         </div>
-
-
+    
+    
         <div style="padding: 15px; margin-top: 0; border: 2px solid #000; width: 93%; margin: 0 auto;">
-
+    
             <div class="section-title" style=" font-size: 18px; text-align: left;">Final Notes :</div>
-
-            <div class="bmi-label" style="text-align: left;  font-size: 15px; font-weight: 500; font-family: 'Montserrat-Regular', sans-serif;">
+    
+            <div class="bmi-label"
+                style="text-align: left;  font-size: 15px; font-weight: 500; font-family: 'Montserrat-Regular', sans-serif;">
                 All test results seem normal, Except the following :<br>BMI percentile status is Under Weight. <br>Body
                 Fat Mass is Low. <br>
                 Fat Free Mass is Low. <br>
@@ -2188,13 +2244,13 @@
                 Waist- Hip Ratio is High
             </div>
         </div>
-
+    
         <div style="margin-top: 10px;"></div>
-
+    
         <div style="padding: 15px; border: 2px solid #000; width: 93%; margin: 0 auto;">
-
+    
             <div class="section-title" style=" font-size: 18px; text-align: left;">Additional Notes :</div>
-
+    
             <div class="bmi-label" style="text-align: left;">
                 <ul class="clearfix" style="padding:0;clear:both;margin: 0 0 0 0;list-style:none;">
                     <li
@@ -2243,33 +2299,28 @@
                 </ul>
             </div>
         </div>
-
-            <div style="width: 93%; margin: 0 auto;">
-
-        <div class="footer-text-content">
-            <div style="margin-top: 15px; text-align: center; font-size: 15px; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
-                **All screening devices are FDA approved for early detection of any abnormalities present, performed by a
-                    technician and medical practitioners. Kindly refer to doctors in a clinical setup for a second opinion if any
+    
+        <div style="width: 93%; margin: 0 auto;">
+    
+            <div class="footer-text-content">
+                <div
+                    style="margin-top: 15px; text-align: center; font-size: 15px; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+                    **All screening devices are FDA approved for early detection of any abnormalities present, performed by
+                    a
+                    technician and medical practitioners. Kindly refer to doctors in a clinical setup for a second opinion
+                    if any
                     abnormalities are detected.
+                </div>
+            </div>
+    
+            <div class="section-title" style=" font-size: 30px; text-align: center; margin-top: 12px;">--- End Of Report ---
+            </div>
+    
+            <div
+                style="font-size: 13px; margin-top: 12px; text-align: center; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
             </div>
         </div>
-
-            <div class="section-title" style=" font-size: 30px; text-align: center; margin-top: 12px;">--- End Of Report ---</div>
-                    
-                 <div style="font-size: 13px; margin-top: 12px; text-align: center; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
-                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
-            </div>
-            </div>
-
-        <!-- <div class="footer-text-content" style="margin-top: 20px; ">
-            <div style="margin-top: 8px; font-size: 14px; font-family: 'Montserrat', sans-serif;">
-                * Dental screening is done by intra oral camera. The process was very much transparent with the school
-                staff
-            </div>
-            <div style="font-size: 12px; margin-top: 10px; text-align: center; font-family: 'Montserrat', sans-serif;">
-                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
-            </div>
-        </div> -->
     </div>
     <!-- Page 8 End -->
 

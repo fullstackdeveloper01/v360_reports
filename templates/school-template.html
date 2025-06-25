@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corporate Report</title>
+    <link rel="stylesheet" href="/pdf/KBGoogleyEyes.ttf">
+
+
+    <style>
+        /* Base styles */
+
+        @font-face {
+            font-family: 'PTSerif';
+            src: url('/pdf/PTSerif-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'PTSerif';
+            src: url('/pdf/PTSerif-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        .page {
+            padding: 0;
+            margin: 0;
+            max-width: 880px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 6px;
+        }
+
+        .left,
+        .right {
+            box-sizing: border-box;
+        }
+
+        .left {
+            width: 70%;
+            margin-top: 20px;
+        }
+
+        .right {
+            width: 20%;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10px;
+        }
+
+        .small-logo {
+            width: 60%;
+            /* border: 1px solid pink; */
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .row strong,
+        .row label {
+            font-weight: bold;
+            color: #19B4AA;
+            font-size: 14px;
+            width: 40%;
+        }
+
+        .row .value {
+            border-bottom: 1px solid #000;
+            font-size: 12px;
+            width: 60%;
+            padding-bottom: 5px;
+        }
+
+        p.paragraph {
+            font-weight: 500;
+            font-family: 'PTSerif-Regular', sans-serif;
+            margin: 0px;
+            font-size: 20px;
+            width: 93%;
+            margin: 0 auto;
+            margin-bottom: 140px;
+            color: #181f4b;
+            margin-top: 10px;
+        }
+
+        .main-heading {
+            font-size: 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 40px;
+            color: #19B4AA;
+            font-family: 'PTSerif-Bold', sans-serif;
+            width: 93%;
+            padding-top: 20px;
+            margin: 0 auto;
+        }
+
+        h2.section-title {
+            color: #1A214C;
+            font-size: 30px;
+            margin-top: 20px;
+            width: 93%;
+            margin: 0 auto;
+            font-weight: normal;
+        }
+
+        span.methodology {
+            color: #19b4aa;
+            font-size: 22px;
+            font-weight: normal;
+            line-height: 26px;
+        }
+
+        .width-80 {
+            width: 80%;
+            margin: 15px auto 0 auto;
+        }
+
+        .width-70 {
+            width: 70%;
+        }
+
+        .width-60 {
+            width: 60%;
+        }
+
+        .width-33 {
+            width: 33%;
+        }
+
+        .width-94 {
+            width: 94%;
+            margin: 0 auto;
+        }
+
+        .width-98 {
+            width: 98%;
+            margin: 0 auto;
+        }
+
+        .width-90 {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .lastPgSubHead {
+            font-size: 12px;
+            color: #1A214C;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+            margin: 0 auto;
+            width: 94%;
+            flex-wrap: wrap;
+        }
+
+        .flex-row .box {
+            width: 33%;
+            min-width: 120px;
+        }
+
+        .flex-row .box img {
+            margin-bottom: 5px;
+        }
+
+        .textarea-sim {
+            width: 90%;
+            height: 96px;
+            margin: 10px auto 0 auto;
+            border: 1px solid #000;
+        }
+
+        .eor {
+            color: #1A214C;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .school-radias-input {
+            color: #18204b;
+            font-weight: 700;
+            font-family: Gotham-Light;
+            font-size: 21px;
+            width: 100%;
+            padding: 20px 0px;
+            border: 2px solid #000;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page 1 -->
+    <div class="page">
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/head-top-img.png"
+            alt="Corporate Health Audit Report" class="full-width" />
+        <div class="flex-container">
+            <div class="left">
+                <div class="row" style="margin-bottom:20px;">
+                    <label>PERFORMED AT</label>
+                    <div class="value">Prime Academy</div>
+                </div>
+                <div class="row" style="margin-bottom:10px;">
+                    <label>PERFORMED BY</label>
+                    <div class="value">Vigour 360</div>
+                </div>
+            </div>
+            <div class="right">
+                <img src="https://app.vigour360.com/assets/admin/images/logo.jpg" alt="Logo" class="small-logo" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/doctor-work-img.png" alt="Page 2"
+            class="full-width" />
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page">
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/hospital-room.png" alt="Page 3"
+            class="full-width" />
+        <div class="main-heading">Introduction</div>
+        <p class="paragraph">
+            Screenings provides vital health information for everyone. In less than fifteen minutes, we can complete a
+            wide range of standard health screenings and deliver real-time results.
+            Biometric health screenings are considered the starting point for any organisation seeking to analyse health
+            status of the entire group, as they provide an accurate baseline analysis.
+        </p>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page">
+        <div class="main-heading">PARAMETERS EVALUATED & METHODOLOGY USED</div>
+        <p class="paragraph" style="margin-bottom: 20px;">
+            We evaluate all basic health parameters based on a number of inclusions and exclusions. These parameters are
+            exhaustive enough to provide information about a person's overall health.
+        </p>
+
+        <h2 class="section-title">BIOMETRIC SCREENING</h2>
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/biometric-screening.png"
+            alt="Biometric Screening" class="full-width" style="margin-top: 15px;" />
+        <p class="paragraph" style="margin-bottom: 20px;">
+            Methodology: <span class="methodology">Assessment conducted with the help of weight measuring digital scale
+                and ultrasound stadiometer.</span>
+        </p>
+
+        <h2 class="section-title">EAR, NOSE & THROAT</h2>
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/nose-throat.png" alt="Ear Nose Throat"
+            class="full-width" style="margin-top: 15px;" />
+        <p class="paragraph" style="margin-bottom: 20px;">
+            Methodology: <span class="methodology">Assessment conducted with the help of a special otoscope.</span>
+        </p>
+
+        <h2 class="section-title">EYES</h2>
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/eye-left-right.png" alt="Eyes"
+            class="full-width" style="margin-top: 15px; width: 93%; margin: 0 auto;" />
+        <p class="paragraph" style="max-width: 98%; margin-top: 20px;">
+            Methodology:
+            <span class="methodology">
+                Assessment conducted with the help of a spot vision screener device by Welch Allyn from USA. It is an
+                FDA approved device and within seconds all kinds of refractive errors can be evaluated with 97%
+                accuracy.
+            </span>
+        </p>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="page">
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/Cardiovascular-head.png"
+            alt="Cardiovascular Head" class="full-width" style="margin-top: 15px; width: 93%; margin: 0 auto;" />
+        <p class="paragraph" style="margin-bottom: 20px;">
+            Methodology:
+            <span class="methodology">
+                Assessment is conducted with the help of various devices. Oximetry and Fever is calculated with a device
+                by Dr. Trust (FDA approved) and for Spirometry there is an MIR smart one peak flow meter (FDA approved).
+                Lastly, for heart & lung sound, EKO core stethoscope is used through which abnormal sounds can also be
+                recorded.
+            </span>
+        </p>
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/dental-screening.png" alt="Dental Screening"
+            class="width-85" />
+        <p class="paragraph" style="margin-bottom: 20px;">
+            Methodology:
+            <span class="methodology">
+                Assessment is conducted with the help of an intra oral camera. Students can see real time images & it
+                can be recorded for the future.
+            </span>
+        </p>
+
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/general-img.png" alt="General Physician"
+            class="full-width" style="margin-top: 15px; width: 93%; margin: 0 auto;" />
+        <p class="paragraph">
+            Methodology:
+            <span class="methodology">Assessment is conducted by a general physician.</span>
+        </p>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="page">
+        <!-- <img src="/parents/school_consolidated_report_page-0006_heading.png" alt="Heading Page 6" class="full-width" style="margin-left: -20px;" /> -->
+        <div class="main-heading">RESPONDENT <br> DEMOGRAPHICS</div>
+        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-top: 0;">TOTAL STUDENTS EVALUATED</div>
+
+        <div class="main-wrap" style="width: 93%; margin: 0 auto;">
+            <div style="width:350px; margin-top: 15px; margin-bottom: 15px;">
+                <div class="school-radias-input" style="box-shadow: none; text-align: center; font-weight: normal; ">550
+                    STUDENTS</div>
+            </div>
+        </div>
+
+        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-top: 0;">CLASSWISE EVALUATION</div>
+        <img src="https://app.vigour360.com/graph/graph139721703.png" alt="Footer Page 6" style="margin-bottom: 180px;" class="full-width" />
+
+    </div>
+
+    <!-- Page 8 -->
+    <div class="page">
+        <!-- <img src="/parents/GENDER-BIFURCATION.png" alt="Gender Bifurcation" class="width-80"
+            style="padding-bottom: 15px;" /> -->
+        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 10px;">GENDER BIFURCATION</div>
+        <img src="https://app.vigour360.com/graph/graph239721703.png" alt="Graph" class="full-width" style="width: 93%; margin: 0 auto;"/>
+        <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/male-female2.png" alt="Male Female" class="full-width" style="padding-bottom: 40px; width: 90%; margin: 0 auto;" />
+        <!-- <img src="/parents/finding-boi-heading.png" alt="Finding BOI" class="full-width" /> -->
+         <div class="main-heading">FINDINGS <span style="font-size: 12px; color: #181f4b; font-weight: 600; margin-bottom: 0;">(% Of Students | Sample Size: 1000 Students)</span></div>
+         <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 10px; padding-top: 0;">BIOMETRIC SCREENING</div>
+        <img src="https://app.vigour360.com/graph/graph339721703.png" alt="Graph" class="full-width" style="width: 93%; margin: 0 auto;"/>
+        <img src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img-wrap3.svg" alt="Bio Image" class="full-width" style="width: 93%; margin: 0 auto; margin-bottom: 100px;"/>
+    </div>
+
+
+
+</body>
+
+</html>

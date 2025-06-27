@@ -216,6 +216,17 @@
             font-weight: 600;
         }
 
+        .bmi-label-m{
+             font-size: 16px;
+            width: 100%;
+            text-align: center;
+            margin-left: -30px;
+            margin-top: -8px;
+            font-style: normal;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
         .biometric-container {
             display: flex;
             flex-direction: row;
@@ -476,11 +487,27 @@
             font-size: 16px;
             padding: 12px 0px 0px 0px !important;
             text-align: center;
-            box-shadow: 8px 5px 20px 0px #d5d5d5;
+            /* box-shadow: 8px 5px 20px 0px #d5d5d5; */
             width: 160px;
             height: 30px;
         }
 
+          .bmi-input-img{
+              padding: 26px 0px 0px 0px;
+            background-image: url('bmi-1.svg');
+            background-size: cover;
+            width: 206px;
+            height: 49px;
+        }
+
+         .eye-input-img{
+            padding: 20px 7px 3px 0px;
+            background-image: url('bmi-1.svg');
+            background-size: cover;
+            width: 175px;
+            height: 38px;
+            text-align: center;
+        }
         .content-row {
             display: flex;
             gap: 10px;
@@ -554,6 +581,32 @@
             box-shadow: 8px 5px 20px 0px #d5d5d5;
         }
 
+            .body-input-img{
+            padding: 11px 0px 3px 0px;
+            background-image: url('bmi-2.png');
+            background-size: cover;
+            text-align: center;
+            width: 177px;
+            height: 40px;
+        }
+
+        .body-input-imge{
+            padding: 17px 20px 0px 0px;
+            background-image: url('bmi-3.png');
+                background-size: cover;
+                text-align: center;
+                width: 140px;
+                height: 50px;
+        }
+
+        .body-input-second-img{
+            padding: 11px 10px 0px 0px;
+            background-image: url('bmi-4.png');
+            background-size: cover;
+            text-align: center;
+            width: 131px;
+            height: 40px;
+        }
         /* 
         .bmi-label {
             font-size: 13px;
@@ -922,16 +975,16 @@
                 <img class="bmi-stats-img" src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img1.svg"
                     alt="Weight icon">
                 <div class="bmi-stats-inner" style="margin-left: 15px;">
-                    <div class="bmi-input">52.3</div>
-                    <div class="bmi-label">WEIGHT/ KGS</div>
+                    <div class="bmi-input-img">52.3</div>
+                    <div class="bmi-label-m" style="margin-left: 1px;">WEIGHT/ KGS</div>
                 </div>
             </div>
             <div class="bmi-stat">
                 <img class="bmi-stats-img" src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img2.svg"
                     alt="Height icon" style="width: 130px; float: left;">
                 <div class="bmi-stats-inner">
-                    <div class="bmi-input">157</div>
-                    <div class="bmi-label">HEIGHT/CMS</div>
+                    <div class="bmi-input-img">157</div>
+                    <div class="bmi-label-m" style="margin-left: 1px;">HEIGHT/CMS</div>
                 </div>
             </div>
         </div>
@@ -939,14 +992,14 @@
         <div class="bmi-stats-container">
             <div class="bmi-stat">
                 <img class="bmi-stats-img" src="/bio-img3.svg" alt="BMI icon">
-                <div class="bmi-stats-inner" style="margin-left: 15px;">
-                    <div class="bmi-input">21.22</div>
-                    <div class="bmi-label">BMI</div>
+                <div class="bmi-stats-inner" style="margin-left: 10px;">
+                    <div class="bmi-input-img">21.22</div>
+                    <div class="bmi-label-m" style="margin-left: 1px;">BMI</div>
                 </div>
             </div>
-            <div class="bmi-stat">
+            <div class="bmi-stat" style="margin-left: 15px;">
                 <div style="width: 100%; text-align: center;">
-                    <div class="bmi-input" style="background-color: #1eb581; width: 300px;">NORMAL</div>
+                    <div class="bmi-input" style="background-color: #1eb581; width: 300px; height: 35px;">NORMAL</div>
                     <div class="bmi-label">BMI STATUS</div>
                 </div>
             </div>
@@ -2219,16 +2272,17 @@
     <!-- Page 8 Start -->
     <div class="page">
         <div class="banner-image">
-            <img src="https://app.vigour360.com/assets/admin/images/image-pdf/exam_back.svg"
+            <img src="https://app.vigour360.com/assets/admin/pdf-images/Header.png"
                 alt="Cardiovascular Header">
         </div>
 
 
-        <div style="padding: 15px; margin-top: 0; border: 2px solid #000; width: 93%; margin: 0 auto;">
-
+       <div style="padding: 15px; margin-top: 0; border: 2px solid #000; width: 93%; margin: 0 auto;">
+    
             <div class="section-title" style=" font-size: 18px; text-align: left;">Final Notes :</div>
-
-            <div class="bmi-label" style="text-align: left;">
+    
+            <div class="bmi-label"
+                style="text-align: left;  font-size: 15px; font-weight: 500; font-family: 'Montserrat-Regular', sans-serif;">
                 All test results seem normal, Except the following :<br>BMI percentile status is Under Weight. <br>Body
                 Fat Mass is Low. <br>
                 Fat Free Mass is Low. <br>
@@ -2246,17 +2300,17 @@
                 Waist- Hip Ratio is High
             </div>
         </div>
-
+    
         <div style="margin-top: 10px;"></div>
-
+    
         <div style="padding: 15px; border: 2px solid #000; width: 93%; margin: 0 auto;">
-
+    
             <div class="section-title" style=" font-size: 18px; text-align: left;">Additional Notes :</div>
-
+    
             <div class="bmi-label" style="text-align: left;">
                 <ul class="clearfix" style="padding:0;clear:both;margin: 0 0 0 0;list-style:none;">
                     <li
-                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;">
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left; font-weight: 500; font-family: 'Montserrat-Regular', sans-serif; margin-bottom: 10px;">
                         <div class="notes-icon" style="margin-right: 15px;">
                             <strong>Biometric Screening : </strong>
                             <span>Your BMI is&nbsp;<b>8.43</b>, indicating your weight is in the <b>Under Weight</b>
@@ -2266,14 +2320,14 @@
                         </div>
                     </li>
                     <li
-                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2; font-weight: 500; text-align: left;margin-bottom: 10px; font-family: 'Montserrat-Regular', sans-serif;">
                         <div class="notes-icon" style="margin-right: 15px;">
                             <strong>Dental Screening : </strong>
                             <span>This is testiing notes</span>
                         </div>
                     </li>
                     <li
-                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
                         <div class="notes-icon" style="margin-right: 15px;">
                             <strong>Ear, Nose, Throat Examination : </strong>
                             <span>If you want to modify native editor notification, you can: Catch the notificationShow
@@ -2281,7 +2335,7 @@
                         </div>
                     </li>
                     <li
-                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
                         <div class="notes-icon" style="margin-right: 15px;">
                             <strong>Cardiovascular and Respiratory : </strong>
                             <span>If you want to modify native editor notification, you can: Catch the notificationShow
@@ -2291,8 +2345,8 @@
                         </div>
                     </li>
                     <li
-                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;">
-                        <div class="notes-icon" style="margin-right: 15px;;">
+                        style="color:#000;display: flex;align-items: center;width: 100%;font-size:15px;line-height:1.2;text-align: left;margin-bottom: 10px;font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+                        <div class="notes-icon" style="margin-right: 15px;">
                             <strong>General Examination : </strong>
                             <span>If you want to modify native editor notification, you can: Catch the notificationShow
                                 event; Process it according to your needs; Cancel .</span>
@@ -2301,24 +2355,28 @@
                 </ul>
             </div>
         </div>
-
-            <div style="width: 93%; margin: 0 auto;">
-
-            <div class="section-title" style=" font-size: 30px; text-align: center; margin-top: 10px;">--- End Of Report ---</div>
-                 <div style="font-size: 13px; margin-top: 10px; text-align: center; font-family: 'Montserrat', sans-serif;">
+    
+        <div style="width: 93%; margin: 0 auto;">
+    
+            <div class="footer-text-content">
+                <div
+                    style="margin-top: 15px; text-align: center; font-size: 15px; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
+                    **All screening devices are FDA approved for early detection of any abnormalities present, performed by
+                    a
+                    technician and medical practitioners. Kindly refer to doctors in a clinical setup for a second opinion
+                    if any
+                    abnormalities are detected.
+                </div>
+            </div>
+    
+            <div class="section-title" style=" font-size: 30px; text-align: center; margin-top: 12px;">--- End Of Report ---
+            </div>
+    
+            <div
+                style="font-size: 13px; margin-top: 12px; text-align: center; font-family: 'Montserrat-Regular', sans-serif; font-weight: 500;">
                 P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
             </div>
-            </div>
-
-        <!-- <div class="footer-text-content" style="margin-top: 20px; ">
-            <div style="margin-top: 8px; font-size: 14px; font-family: 'Montserrat', sans-serif;">
-                * Dental screening is done by intra oral camera. The process was very much transparent with the school
-                staff
-            </div>
-            <div style="font-size: 12px; margin-top: 10px; text-align: center; font-family: 'Montserrat', sans-serif;">
-                P = PRESENT, AB = ABSENT, N = NORMAL, ABN = ABNORMAL
-            </div>
-        </div> -->
+        </div>
     </div>
     <!-- Page 8 End -->
 

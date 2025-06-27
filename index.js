@@ -8,7 +8,7 @@ const port = 3001;
 
 app.use(bodyParser.json());
 
-// Static file serving
+// Serve static files (like CSS, images)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Test Route
@@ -16,25 +16,28 @@ app.get('/test', (req, res) => {
   res.status(200).send("Server is up");
 });
 
-// Template for user report
+
+// ==========================
+// HTML Template Views
+// ==========================
+
+// User Template
 app.get('/template-view', (req, res) => {
   const { name = 'Guest', email = 'N/A' } = req.query;
-
   const templatePath = path.join(__dirname, 'templates', 'template.html');
-  let template = fs.readFileSync(templatePath, 'utf8');
 
+  let template = fs.readFileSync(templatePath, 'utf8');
   template = template.replace('{{name}}', name).replace('{{email}}', email);
 
   res.send(template);
 });
 
-// Template for employee report
+// Employee Template
 app.get('/employee-template-view', (req, res) => {
   const { name = 'Unknown', email = 'N/A', designation = 'Employee' } = req.query;
-
   const templatePath = path.join(__dirname, 'templates', 'employee-template.html');
-  let template = fs.readFileSync(templatePath, 'utf8');
 
+  let template = fs.readFileSync(templatePath, 'utf8');
   template = template
     .replace('{{name}}', name)
     .replace('{{email}}', email)
@@ -43,7 +46,25 @@ app.get('/employee-template-view', (req, res) => {
   res.send(template);
 });
 
-// Generate PDF for user
+// School Template
+app.get('/school-template-view', (req, res) => {
+  const { schoolName = 'Unnamed School', reportDate = 'N/A' } = req.query;
+  const templatePath = path.join(__dirname, 'templates', 'school-template.html');
+
+  let template = fs.readFileSync(templatePath, 'utf8');
+  template = template
+    .replace('{{schoolName}}', schoolName)
+    .replace('{{reportDate}}', reportDate);
+
+  res.send(template);
+});
+
+
+// ==========================
+// PDF Student
+// ==========================
+
+// User Report PDF
 app.get('/generate-pdf', async (req, res) => {
   const { name, email } = req.query;
 
@@ -55,7 +76,6 @@ app.get('/generate-pdf', async (req, res) => {
 
     const page = await browser.newPage();
     const templateUrl = `http://localhost:${port}/template-view?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`;
-
     await page.goto(templateUrl, { waitUntil: 'networkidle0' });
 
     const pdfBuffer = await page.pdf({
@@ -67,18 +87,18 @@ app.get('/generate-pdf', async (req, res) => {
 
     res.set({
       'Content-Type': 'application/pdf',
-      'Content-Disposition': 'inline; filename=generated.pdf',
+      'Content-Disposition': 'inline; filename=user-report.pdf',
       'Content-Length': pdfBuffer.length,
     });
 
     res.send(pdfBuffer);
   } catch (err) {
-    console.error('PDF generation failed:', err);
-    res.status(500).send('Failed to generate PDF');
+    console.error('User PDF generation failed:', err);
+    res.status(500).send('Failed to generate user report PDF');
   }
 });
 
-// Generate PDF for employee report
+// Employee Report PDF
 app.get('/generate-employee-report', async (req, res) => {
   const { name, email, designation } = req.query;
 
@@ -90,7 +110,6 @@ app.get('/generate-employee-report', async (req, res) => {
 
     const page = await browser.newPage();
     const templateUrl = `http://localhost:${port}/employee-template-view?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&designation=${encodeURIComponent(designation)}`;
-
     await page.goto(templateUrl, { waitUntil: 'networkidle0' });
 
     const pdfBuffer = await page.pdf({
@@ -110,6 +129,40 @@ app.get('/generate-employee-report', async (req, res) => {
   } catch (err) {
     console.error('Employee PDF generation failed:', err);
     res.status(500).send('Failed to generate employee report PDF');
+  }
+});
+
+// School Report PDF
+app.get('/generate-school-report', async (req, res) => {
+  const { schoolName, reportDate } = req.query;
+
+  try {
+    const browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+
+    const page = await browser.newPage();
+    const templateUrl = `http://localhost:${port}/school-template-view?schoolName=${encodeURIComponent(schoolName)}&reportDate=${encodeURIComponent(reportDate)}`;
+    await page.goto(templateUrl, { waitUntil: 'networkidle0' });
+
+    const pdfBuffer = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+    });
+
+    await browser.close();
+
+    res.set({
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'inline; filename=school-report.pdf',
+      'Content-Length': pdfBuffer.length,
+    });
+
+    res.send(pdfBuffer);
+  } catch (err) {
+    console.error('School PDF generation failed:', err);
+    res.status(500).send('Failed to generate school report PDF');
   }
 });
 

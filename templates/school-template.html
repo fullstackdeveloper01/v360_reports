@@ -12,15 +12,22 @@
         /* Base styles */
 
         @font-face {
-            font-family: 'PTSerif';
-            src: url('/pdf/PTSerif-Regular.ttf') format('truetype');
+            font-family: 'KBGoogleyEyes';
+            src: url('/pdf/KBGoogleyEyes.woff') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
         @font-face {
-            font-family: 'PTSerif';
-            src: url('/pdf/PTSerif-Bold.ttf') format('truetype');
+            font-family: 'Montserrat-UltraLight';
+            src: url('/pdf/Montserrat-UltraLight.woff') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Regular';
+            src: url('/pdf/Montserrat-Regular.woff') format('truetype');
             font-weight: bold;
             font-style: normal;
         }
@@ -97,22 +104,22 @@
 
         .row strong,
         .row label {
-            font-weight: bold;
-            color: #19B4AA;
-            font-size: 14px;
+             color: #19B4AA;
+            font-size: 18px;
+            font-weight: 500;
             width: 40%;
         }
 
         .row .value {
             border-bottom: 1px solid #000;
-            font-size: 12px;
+            font-size: 14px;
             width: 60%;
             padding-bottom: 5px;
         }
 
         p.paragraph {
             font-weight: 500;
-            font-family: 'PTSerif-Regular', sans-serif;
+            /* font-family: 'PTSerif-Regular', sans-serif; */
             margin: 0px;
             font-size: 20px;
             width: 93%;
@@ -419,7 +426,7 @@
     <!-- Page 1 -->
     <div class="page">
         <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/head-top-img.png"
-            alt="Corporate Health Audit Report" class="full-width" />
+            alt="School Health Audit Report" class="full-width" />
         <div class="flex-container" style="padding-top: 30px;">
             <div class="left">
                 <div class="row" style="margin-bottom:20px;">
@@ -447,12 +454,9 @@
     <div class="page">
         <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/hospital-room.png" alt="Page 3"
             class="full-width" />
-        <div class="main-heading">Introduction</div>
+        <div class="main-heading" style="margin-top: 50px;">Introduction</div>
         <p class="paragraph">
-            Screenings provides vital health information for everyone. In less than fifteen minutes, we can complete a
-            wide range of standard health screenings and deliver real-time results.
-            Biometric health screenings are considered the starting point for any organisation seeking to analyse health
-            status of the entire group, as they provide an accurate baseline analysis.
+           Screenings provides vital health information for everyone. In less than fifteen minutes, we can complete a wide range of standard health screenings and deliver real-time results.Biometric health screenings are considered the startingpoint for any organisation seeking to analyse health status of the entire group, as they provide an accurate baseline analysis.
         </p>
     </div>
 
@@ -464,7 +468,7 @@
             exhaustive enough to provide information about a person's overall health.
         </p>
 
-        <h2 class="section-title">BIOMETRIC SCREENING</h2>
+        <h2 class="section-title" style="margin-top: 30px; margin-bottom: 15px;">BIOMETRIC SCREENING</h2>
         <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/biometric-screening.png"
             alt="Biometric Screening" class="full-width" style="margin-top: 15px;" />
         <p class="paragraph" style="margin-bottom: 20px;">
@@ -472,14 +476,14 @@
                 and ultrasound stadiometer.</span>
         </p>
 
-        <h2 class="section-title">EAR, NOSE & THROAT</h2>
+        <h2 class="section-title" style="margin-top: 30px;">EAR, NOSE & THROAT</h2>
         <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/nose-throat.png" alt="Ear Nose Throat"
             class="full-width" style="margin-top: 15px;" />
         <p class="paragraph" style="margin-bottom: 20px;">
             Methodology: <span class="methodology">Assessment conducted with the help of a special otoscope.</span>
         </p>
 
-        <h2 class="section-title">EYES</h2>
+        <h2 class="section-title" style="margin-top: 30px;">EYES</h2>
         <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/eye-left-right.png" alt="Eyes"
             class="full-width" style="margin-top: 15px; width: 93%; margin: 0 auto;" />
         <p class="paragraph" style="max-width: 98%; margin-top: 20px;">
@@ -495,7 +499,7 @@
     <!-- Page 5 -->
     <div class="page">
         <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/Cardiovascular-head.png"
-            alt="Cardiovascular Head" class="full-width" style="margin-top: 15px; width: 93%; margin: 0 auto;" />
+            alt="Cardiovascular Head" class="full-width" style=" width: 93%; margin: 0 auto; padding-top: 20px;" />
         <p class="paragraph" style="margin-bottom: 20px;">
             Methodology:
             <span class="methodology">
@@ -530,7 +534,7 @@
         <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-top: 0;">TOTAL STUDENTS EVALUATED</div>
 
         <div class="main-wrap" style="width: 93%; margin: 0 auto;">
-            <div style="width:350px; margin-top: 15px; margin-bottom: 15px;">
+            <div style="width:350px; margin-top: 15px; margin-bottom: 0px;">
                 <div class="school-radias-input" style="box-shadow: none; text-align: center; font-weight: normal; ">550
                     STUDENTS</div>
             </div>
@@ -539,38 +543,36 @@
         <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-top: 0;">CLASSWISE EVALUATION</div>
         <!-- <img src="https://app.vigour360.com/graph/graph139721703.png" alt="Footer Page 6" style="margin-bottom: 180px;"
             class="full-width" /> -->
-            <img src="Zing3DBarChart.jpg" alt="Footer Page 6" style="margin-bottom: 350px !important;  width: 93%; margin: 0 auto;"
+            <img src="Zing3DBarChart.jpg" alt="Footer Page 6" style="  width: 93%; margin: 0 auto;"
             class="full-width" />
-    </div>
-
-    <!-- Page 7 -->
-    <div class="page">
-        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 10px;">GENDER BIFURCATION</div>
+                   <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-top: 0; padding-top: 0;">GENDER BIFURCATION</div>
         <!-- <img src="https://app.vigour360.com/graph/graph239721703.png" alt="Graph" class="full-width"
             style="width: 93%; margin: 0 auto;" /> -->
             <img src="GenderRatioBarChart.jpg" alt="Graph" class="full-width"
             style="width: 93%; margin: 0 auto;" />
+    </div>
+
+    <!-- Page 7 -->
+    <div class="page">
+ 
         <!-- <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/male-female2.png" alt="Male Female"
             class="full-width" style="padding-bottom: 40px; width: 90%; margin: 0 auto;" /> -->
         <div class="main-heading">FINDINGS <span
                 style="font-size: 12px; color: #181f4b; font-weight: 600; margin-bottom: 0;">(% Of Students | Sample
                 Size: 1000 Students)</span></div>
-        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 0px; padding-top: 0;">BIOMETRIC
+        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 10px; padding-top: 0;">BIOMETRIC
             SCREENING</div>
         <!-- <img src="https://app.vigour360.com/graph/graph339721703.png" alt="Graph" class="full-width"
             style="width: 93%; margin: 0 auto;" /> -->
             <img src="PieChart.jpg" alt="Graph" class="full-width"
-            style="width: 70%; margin: 0 auto;" />
+            style="width: 90%; margin: 0 auto;" />
         <img src="https://app.vigour360.com/assets/admin/images/image-pdf/bio-img-wrap3.svg" alt="Bio Image"
-            class="full-width" style="width: 93%; margin: 0 auto; margin-bottom: 100px;" />
-    </div>
+            class="full-width" style="width: 93%; margin: 0 auto; margin-bottom: 10px;" />
 
-    <!-- Page 8 -->
-    <div class="page">
-        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 40px;">EAR, NOSE & THROAT</div>
+                    <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 40px;">EAR, NOSE & THROAT</div>
         <div class="progress-wrapper" id="eyeprogressContainer"></div>
 
-        <div class="legend">
+        <div class="legend" style="margin-bottom: 60px;">
             <div class="legend-item">
                 <span class="legend-color ear"></span>
                 <span>EAR</span>
@@ -630,11 +632,16 @@
             });
         </script>
 
+    </div>
+
+    <!-- Page 8 -->
+    <div class="page">
+
 
         <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 40px;">Cardiovascular &
             Respiratory</div>
         <div class="progress-wrapper" id="progressContainer"></div>
-        <div class="legend" style="margin-bottom: 350px;">
+        <div class="legend" style="margin-bottom: 30px;">
             <div class="legend-item">
                 <span class="legend-color good"></span>
                 <span>Good</span>
@@ -688,47 +695,50 @@
                 container.appendChild(itemDiv);
             });
         </script>
-    </div>
-
-    <!-- Page 9 -->
-    <div class="page">
-        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 10px;">EYE SCREENING</div>
 
 
-        <div style="width: 95%; display: flex; margin: 0 auto;">
+    <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 20px;">EYE SCREENING</div>
+
+
+        <div style="width: 93%; display: flex; margin: 0 auto;">
             <div style="width: 70%;">
                 <!-- <img src="https://app.vigour360.com/graph/graph1334931671.png" alt="Graph" class="full-width"
                     style="width: 100%;" /> -->
                     <img src="Graph5BarChart.jpg" alt="Graph" class="full-width"
                     style="width: 100%;" />
             </div>
-            <div style="width: 30%; margin-top: 30px;">
-                <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/eye22.svg" alt="Graph"
+            <div style="width: 30%; margin-top: 0px;">
+                <img src="1.svg" alt="Graph"
                     class="full-width" style="width: 93%; margin: 0 auto;" />
             </div>
         </div>
 
-        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 0px; padding-top: 10px;">Dental
+        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 0px; padding-top: 20px;">Dental
             screening</div>
 
 
-        <div style="width: 95%; display: flex; margin: 0 auto;">
+        <div style="width: 93%; display: flex; margin: 0 auto;">
             <div style="width: 70%; margin: 0 auto;">
                 <!-- <img src="https://app.vigour360.com/graph/graph1434931671.png" alt="Graph" class="full-width"
                     style="width: 100%;" />  -->
                     <img src="Graph9Chart.jpg" alt="Graph" class="full-width"
                     style="width: 100%;" />
             </div>
-            <div style="width: 30%; margin-top: 30px;">
-                <img src="https://app.vigour360.com/assets/admin/images/pdf/pdf-img/dental2.svg" alt="Graph"
+            <div style="width: 30%; margin-top: 15px; margin-bottom: 160px;">
+                <img src="2.svg" alt="Graph"
                     class="full-width" style="width: 93%; margin: 0 auto;" />
             </div>
         </div>
+    </div>
 
-        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 8px; padding-top: 0;">GENERAL
+    <!-- Page 9 -->
+    <div class="page">
+    
+
+        <div class="main-heading" style="font-size: 30px; color:#181f4b; margin-bottom: 8px; padding-top: 20px;">GENERAL
             EXAMINATION</div>
 
-        <div style="font-size: 14px; width: 90%; margin: 0 auto;">The overall school health is</div>
+        <div style="font-size: 14px; width: 90%; margin: 0 auto; padding-bottom: 20px;">The overall school health is</div>
 
         <div style="display: flex; gap: 20px; width: 90%; margin: 0 auto; margin-top: 10px; padding: 2px;">
             <div style="flex: 1; position: relative;">
@@ -761,7 +771,7 @@
         </script>
 
         <div
-            style="padding: 15px; margin-top: 60px !important; border: 1px solid #000; width: 90%; margin: 0 auto; height: 90px; background-color: #f9f9f9;">
+            style="padding: 15px; margin-top: 60px !important; border: 1px solid #000; width: 90%; margin: 0 auto; height: 120px; background-color: #f9f9f9;">
             <div class="bmi-label"
                 style="text-align: left;  font-size: 15px; font-weight: 500; font-family: 'Montserrat-Regular', sans-serif; ">
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered

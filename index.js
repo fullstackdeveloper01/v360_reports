@@ -59,12 +59,25 @@ app.get('/school-template-view', (req, res) => {
   res.send(template);
 });
 
+// Corporate Template View
+app.get('/corporate-template-view', (req, res) => {
+  const { companyName = 'Unknown Company', reportDate = 'N/A' } = req.query;
+  const templatePath = path.join(__dirname, 'templates', 'corporate-template.html');
+
+  let template = fs.readFileSync(templatePath, 'utf8');
+  template = template
+    .replace('{{companyName}}', companyName)
+    .replace('{{reportDate}}', reportDate)
+
+  res.send(template);
+});
+
 
 // ==========================
 // PDF Student
 // ==========================
 
-// User Report PDF
+// Student Report PDF
 app.get('/generate-pdf', async (req, res) => {
   const { name, email } = req.query;
 
@@ -165,6 +178,41 @@ app.get('/generate-school-report', async (req, res) => {
     res.status(500).send('Failed to generate school report PDF');
   }
 });
+
+// Corporate Report PDF
+app.get('/generate-corporate-report', async (req, res) => {
+  const { companyName, reportDate } = req.query;
+
+  try {
+    const browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+
+    const page = await browser.newPage();
+    const templateUrl = `http://localhost:${port}/corporate-template-view?companyName=${encodeURIComponent(companyName)}&reportDate=${encodeURIComponent(reportDate)}`;
+    await page.goto(templateUrl, { waitUntil: 'networkidle0' });
+
+    const pdfBuffer = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+    });
+
+    await browser.close();
+
+    res.set({
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'inline; filename=corporate-report.pdf',
+      'Content-Length': pdfBuffer.length,
+    });
+
+    res.send(pdfBuffer);
+  } catch (err) {
+    console.error('Corporate PDF generation failed:', err);
+    res.status(500).send('Failed to generate corporate report PDF');
+  }
+});
+
 
 // Start server
 app.listen(port, () => {
